@@ -23,8 +23,8 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const [color, setColor] = useState(0)
 
-  const ENDPOINT = 'https://react-dnd-test.herokuapp.com/';
-  //const ENDPOINT = 'localhost:5000/';
+  //const ENDPOINT = 'https://react-dnd-test.herokuapp.com/';
+  const ENDPOINT = 'localhost:5000/';
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
