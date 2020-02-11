@@ -53,7 +53,6 @@ html, body {
   .mt-20 {
     margin-top: 20px;
   }
-  
   @media (min-width: 320px) and (max-width: 480px) {
     .joinOuterContainer {
       height: 100%;

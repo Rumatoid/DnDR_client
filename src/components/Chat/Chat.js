@@ -21,7 +21,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const [color, setColor] = useState(0)
+  const [color, setColor] = useState(0) 
 
   //const ENDPOINT = 'https://react-dnd-test.herokuapp.com/';
   const ENDPOINT = 'localhost:5000/';
