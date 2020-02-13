@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -7,13 +7,14 @@ import './Start_wtihoutcookies.css';
 const Start_wtihoutcookies = () => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  const [gets, setGets] = useState([]);
 
   const onSubmit = e => {
     const post = {
       title: name,
       text: room
     };
-    console.log('lol');
+
     axios.post('http://localhost:5000/posts', post);
   };
 
@@ -39,7 +40,7 @@ const Start_wtihoutcookies = () => {
         </div>
         <Link
           onClick={e => (!name || !room ? e.preventDefault() : onSubmit(e))}
-          to={`/`}
+          to={`/GET`}
         >
           <button className='button mt-20' type='submit'>
             Sign In
