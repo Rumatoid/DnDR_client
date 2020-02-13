@@ -4,13 +4,11 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const Validator = Valid => {
-  console.log(Valid);
-  Valid = Valid.nickname;
+const Validator = ({ Valid, text }) => {
   if (!Valid) {
-    return <p> error Nickname </p>;
+    return <div className='Validator mb-20'>{text}</div>;
   }
-  return '';
+  return <div className='Validator mb-20'> </div>;
 };
 
 const Start_wtihoutcookies = () => {
@@ -49,21 +47,22 @@ const Start_wtihoutcookies = () => {
       <div className='joinInnerContainer'>
         <h1 className='heading'>Join</h1>
         <div>
-          <Validator nickname={nicknameValid} />
           <input
             placeholder='Nickname'
             className='joinInput'
             type='text'
             onChange={event => handleNicknameChange(event.target.value)}
           />
+          <Validator Valid={nicknameValid} text='Nickname error' />
         </div>
         <div>
           <input
             placeholder='Password'
-            className='joinInput mt-20'
+            className='joinInput'
             type='text'
             onChange={event => handlePasswordChange(event.target.value)}
           />
+          <Validator Valid={passwordValid} text='Password error' />
         </div>
         <Link
           onClick={e => (!nickname || !password ? onSubmitErr(e) : onSubmit(e))}
