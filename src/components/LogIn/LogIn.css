@@ -23,8 +23,7 @@ body {
 }
 
 .joinInnerContainer {
-  width: 30%;
-  margin: 36px auto;
+  width: 20%;
 }
 
 .joinInput {
@@ -96,9 +95,4 @@ button:focus {
   display: block;
   position: relative;
   margin-bottom: 15px;
-}
-
-.some-form {
-  width: 30%;
-  margin: 36px auto;
 }
