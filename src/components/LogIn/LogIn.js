@@ -6,9 +6,9 @@ import './LogIn.css';
 
 const Validator = ({ Valid, text }) => {
   if (!Valid) {
-    return <div className='Validator mb-20'>{text}</div>;
+    return <span className='some-form__hint'>{text}</span>;
   }
-  return <div className='Validator mb-20'> </div>;
+  return <span className='some-form__hint'>{text}</span>;
 };
 
 const Start_wtihoutcookies = () => {
@@ -46,7 +46,7 @@ const Start_wtihoutcookies = () => {
     <div className='joinOuterContainer'>
       <div className='joinInnerContainer'>
         <h1 className='heading'>Join</h1>
-        <div>
+        <div className='some-form__line'>
           <input
             placeholder='Nickname'
             className='joinInput'
@@ -55,10 +55,10 @@ const Start_wtihoutcookies = () => {
           />
           <Validator Valid={nicknameValid} text='Nickname error' />
         </div>
-        <div>
+        <div className='some-form__line'>
           <input
             placeholder='Password'
-            className='joinInput'
+            className='joinInput mt-20'
             type='text'
             onChange={event => handlePasswordChange(event.target.value)}
           />
