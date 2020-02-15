@@ -15,10 +15,6 @@ const LogIn = ({ setFlag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
 
-  const [style, setStyle] = useState({ zIndex: '-1', opacity: '0' });
-  const [style_nickname, setStyle_nickname] = useState();
-  const [style_password, setStyle_password] = useState();
-
   const [nicknameValid, setNicknameValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
 
@@ -27,9 +23,7 @@ const LogIn = ({ setFlag }) => {
   const inputPasswordRef = React.createRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      if (inputNicknameRef.current) inputNicknameRef.current.focus();
-    }, 1000);
+    inputNicknameRef.current.focus();
   }, []);
 
   const onSubmit = () => {
@@ -80,7 +74,6 @@ const LogIn = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputNicknameRef}
-          style={style_nickname}
           placeholder='Nickname'
           className={nicknameValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -91,7 +84,6 @@ const LogIn = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputPasswordRef}
-          style={style_password}
           placeholder='Password'
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
           type='text'

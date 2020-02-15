@@ -79,7 +79,6 @@ const SignUp = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputNicknameRef}
-          style={style_nickname}
           placeholder='Nickname'
           className={nicknameValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -90,7 +89,6 @@ const SignUp = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputPasswordRef}
-          style={style_password}
           placeholder='Password'
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
           type='text'
