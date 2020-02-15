@@ -96,7 +96,9 @@ const SignUp = ({ setFlag }) => {
           onKeyPress={handlePressEnter}
         />
       </div>
-      //TODO Переделать Confirm Password
+      {
+        //TODO Переделать Confirm Password
+      }
       <div className='some-form__line'>
         <input
           ref={inputPasswordRef}
