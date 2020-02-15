@@ -8,12 +8,7 @@ import './LogIn_SignUp__Nav.css';
 import LogIn from './LogIn/LogIn';
 import SignUp from './LogIn/SignUp';
 
-const Validator = ({ Valid, text, style }) => {
-  if (!Valid) {
-    return <span className='some-form__hint'>{text}</span>;
-  }
-  return <span className='some-form__hint' style={style}></span>;
-};
+import Plane from './plane.svg';
 
 const LogIn_SignUp = () => {
   const [flag, setFlag] = useState(true);
@@ -31,6 +26,7 @@ const LogIn_SignUp = () => {
   return (
     <div className='joinOuterContainer'>
       <div className='joinInnerContainer'>
+        <image src='./plane.svg' />
         <div className='nav'>
           <ul>
             <li className={flag ? 'LogIn-act' : 'LogIn-act LogIn-inact'}>
