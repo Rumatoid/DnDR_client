@@ -26,7 +26,6 @@ const LogIn_SignUp = () => {
   return (
     <div className='joinOuterContainer'>
       <div className='joinInnerContainer'>
-        <image src='./plane.svg' />
         <div className='nav'>
           <ul>
             <li className={flag ? 'LogIn-act' : 'LogIn-act LogIn-inact'}>
