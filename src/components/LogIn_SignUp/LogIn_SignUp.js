@@ -8,8 +8,6 @@ import './LogIn_SignUp__Nav.css';
 import LogIn from './LogIn/LogIn';
 import SignUp from './LogIn/SignUp';
 
-import Plane from './plane.svg';
-
 const LogIn_SignUp = () => {
   const [flag, setFlag] = useState(true);
 
