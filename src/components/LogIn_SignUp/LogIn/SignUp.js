@@ -114,7 +114,7 @@ const SignUp = ({ setFlag }) => {
         to={`/`}
       >
         <button className='button' type='submit'>
-          Log In
+          SIGN UP
         </button>
       </Link>
     </div>
