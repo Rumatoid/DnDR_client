@@ -1,0 +1,57 @@
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #19191a;
+}
+
+.joinInnerContainer {
+  width: 500px;
+  height: 550px;
+  overflow: hidden;
+}
+
+.LogIn {
+  width: 430px;
+  height: 375px;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+}
+
+.LogIn-left {
+  transform: translateX(-400px);
+  opacity: 0;
+}
+
+.SignUp {
+  width: 430px;
+  height: 375px;
+  position: relative;
+  top: -375px;
+  left: 450px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.SignUp-left {
+  transform: translateX(-450px);
+  opacity: 1;
+}

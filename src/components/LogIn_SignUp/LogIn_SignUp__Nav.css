@@ -1,0 +1,67 @@
+.nav {
+  width: 430px;
+  height: 68px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-bottom: 40px;
+}
+
+.nav ul {
+  padding: 0;
+}
+
+.nav li {
+  display: inline;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.nav button {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+
+  outline: 0;
+
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+
+.LogIn-act button {
+  opacity: 1;
+
+  padding-bottom: 2px;
+  color: #e1e3e6;
+  border-bottom: 4px solid #ffffff;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.LogIn-inact button {
+  opacity: 0.4;
+  padding-bottom: 0;
+  color: rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+.SignUp-act button {
+  opacity: 1;
+
+  padding-bottom: 2px;
+  color: #e1e3e6;
+  border-bottom: 4px solid #ffffff;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.SignUp-inact button {
+  opacity: 0.4;
+  border: 0;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
