@@ -31,11 +31,13 @@ const Characters = props => {
       <div className='charactersInnerContainer'>
         <div className='Characters_create'>
           <img src={DragonTail} className='Characters_DragonTail'></img>
-
           <div className='Character_createContainer'>
-            <div className='Characters_createBtn'> Create a new character</div>
+            <div className='Characters_createBtn'>Create a new character</div>
           </div>
           <img src={Dragon} className='Characters_Dragon'></img>
+          <div className='Character_createContainer'>
+            <Link className='Character_Btn' to={`/`}></Link>
+          </div>
         </div>
         <div className='Characters'>
           {charactersList.map((characterOne, i) => (

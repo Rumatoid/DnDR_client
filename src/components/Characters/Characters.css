@@ -53,6 +53,16 @@ body {
   cursor: pointer;
 }
 
+.Character_Btn {
+  display: block;
+  position: absolute;
+  top: 147px;
+  left: 125px;
+
+  width: 561px;
+  height: 75px;
+}
+
 .Characters_Dragon {
   position: relative;
 
