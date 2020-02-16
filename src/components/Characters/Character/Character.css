@@ -1,0 +1,48 @@
+.Character_ul {
+  width: 463px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.Character_ul li {
+  display: Inline-block;
+}
+
+.Character_ul .Character_li {
+  position: relative;
+  border-radius: 50%;
+
+  float: right;
+}
+
+.Character_ul .Character_li:hover {
+  box-shadow: 0 3px 15px rgb(163, 40, 40);
+}
+
+.Character_ul .Character_li:active {
+  box-shadow: 0 5px 25px rgb(255, 0, 0);
+}
+
+.Character {
+  color: #1b1b1b;
+  background-color: #c4c4c4;
+
+  width: 388px;
+  height: 62px;
+
+  font-size: 30px;
+  display: block;
+  outline: 0;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 0 15px 0 15px;
+  cursor: pointer;
+}
+
+.character_image {
+  width: 62px;
+  height: 62px;
+  display: block;
+  margin: auto;
+}

@@ -1,0 +1,96 @@
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.charactersOuterContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #19191a;
+}
+
+.charactersInnerContainer {
+  width: 810px;
+  margin-top: 40px;
+}
+
+.Characters_create {
+  margin-bottom: 90px;
+  position: relative;
+}
+
+.Character_createContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.Characters_createBtn {
+  position: absolute;
+  top: 147px;
+
+  width: 561px;
+  height: 75px;
+  background: #b92020;
+  border-radius: 5px;
+
+  font-size: 40px;
+  text-align: center;
+  line-height: 75px;
+  color: #e1e3e6;
+
+  cursor: pointer;
+}
+
+.Characters_Dragon {
+  position: relative;
+
+  left: 140px;
+  width: 286px;
+  height: 197px;
+}
+
+.Characters_DragonTail {
+  position: absolute;
+
+  top: 55%;
+  left: 72%;
+  width: 345px;
+  height: 133px;
+}
+
+.Characters {
+  width: 490px;
+  height: 380px;
+  margin: auto;
+  overflow: auto;
+  flex: auto;
+}
+
+.Characters::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.Characters::-webkit-scrollbar {
+  background-color: #454547af;
+  border-radius: 10px;
+  width: 12px;
+}
+
+.Characters::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}

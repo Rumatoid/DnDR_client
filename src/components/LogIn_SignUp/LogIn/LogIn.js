@@ -93,7 +93,7 @@ const LogIn = ({ setFlag }) => {
       </div>
       <Link
         onClick={e => (!nickname || !password ? onSubmitErr(e) : onSubmit(e))}
-        to={`/`}
+        to={`/` + nickname + ``}
       >
         <button className='button' type='submit'>
           Log In
