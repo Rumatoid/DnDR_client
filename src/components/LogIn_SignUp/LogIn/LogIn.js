@@ -4,13 +4,6 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const Validator = ({ Valid, text, style }) => {
-  if (!Valid) {
-    return <span className='some-form__hint'>{text}</span>;
-  }
-  return <span className='some-form__hint' style={style}></span>;
-};
-
 const LogIn = ({ setFlag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');

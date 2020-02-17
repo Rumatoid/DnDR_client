@@ -4,40 +4,25 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const Validator = ({ Valid, text, style }) => {
-  if (!Valid) {
-    return <span className='some-form__hint'>{text}</span>;
-  }
-  return <span className='some-form__hint' style={style}></span>;
-};
-
-const SignUp = ({ setFlag }) => {
+const SignUp = ({}) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
-
-  const [style, setStyle] = useState({ zIndex: '-1', opacity: '0' });
-  const [style_nickname, setStyle_nickname] = useState();
-  const [style_password, setStyle_password] = useState();
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
   const [nicknameValid, setNicknameValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
+  const [passwordConfirmValid, setPasswordConfirmValid] = useState(true);
 
   //Refs
   const inputNicknameRef = React.createRef();
   const inputPasswordRef = React.createRef();
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (inputNicknameRef.current) inputNicknameRef.current.focus();
-    }, 1000);
-  }, []);
+  const inputPasswordConfirmRef = React.createRef();
 
   const onSubmit = () => {
     const post = {
       title: nickname,
       text: password
     };
-    setFlag(true);
 
     //axios.post('http://localhost:5000/posts', post);
   };
@@ -46,6 +31,7 @@ const SignUp = ({ setFlag }) => {
 
     if (!nickname) setNicknameValid(false);
     if (!password) setPasswordValid(false);
+    if (!passwordConfirm) setPasswordConfirmValid(false);
   };
 
   const handleNicknameChange = value => {
@@ -60,6 +46,12 @@ const SignUp = ({ setFlag }) => {
     else setPasswordValid(false);
   };
 
+  const handlePasswordConfirmChange = value => {
+    setPasswordConfirm(value);
+    if (value) setPasswordConfirmValid(true);
+    else setPasswordConfirmValid(false);
+  };
+
   const handlePressEnter_onNickname = key => {
     if (key.charCode === 13) {
       if (!nickname) setNicknameValid(false);
@@ -67,9 +59,16 @@ const SignUp = ({ setFlag }) => {
     }
   };
 
-  const handlePressEnter = key => {
+  const handlePressEnter_onPassword = key => {
     if (key.charCode === 13) {
       if (!password) setPasswordValid(false);
+      else inputPasswordConfirmRef.current.focus();
+    }
+  };
+
+  const handlePressEnter_onPasswordCofirm = key => {
+    if (key.charCode === 13) {
+      if (!passwordConfirm) setPasswordConfirmValid(false);
       else onSubmit();
     }
   };
@@ -93,21 +92,17 @@ const SignUp = ({ setFlag }) => {
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
           type='text'
           onChange={event => handlePasswordChange(event.target.value)}
-          onKeyPress={handlePressEnter}
+          onKeyPress={handlePressEnter_onPassword}
         />
       </div>
-      {
-        //TODO Переделать Confirm Password
-      }
       <div className='some-form__line'>
         <input
-          ref={inputPasswordRef}
-          style={style_password}
+          ref={inputPasswordConfirmRef}
           placeholder='Confirm Password'
-          className={passwordValid ? 'joinInput' : 'joinInput_error'}
+          className={passwordConfirmValid ? 'joinInput' : 'joinInput_error'}
           type='text'
-          onChange={event => handlePasswordChange(event.target.value)}
-          onKeyPress={handlePressEnter}
+          onChange={event => handlePasswordConfirmChange(event.target.value)}
+          onKeyPress={handlePressEnter_onPasswordCofirm}
         />
       </div>
       <Link
