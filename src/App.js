@@ -8,7 +8,7 @@ import Characters from './components/Characters/Characters';
 const App = () => (
   <Router>
     <Route path='/' exact component={LogIn_SignUp} />
-    <Route path='/:Nickname' exact component={Characters} />
+    <Route path='/:Username' exact component={Characters} />
   </Router>
 );
 

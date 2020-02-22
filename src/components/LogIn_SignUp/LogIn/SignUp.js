@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const SignUp = ({}) => {
+const SignUp = ({ setFlag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -19,12 +19,28 @@ const SignUp = ({}) => {
   const inputPasswordConfirmRef = React.createRef();
 
   const onSubmit = () => {
-    const post = {
-      title: nickname,
-      text: password
-    };
+    if (password == passwordConfirm) {
+      const post = {
+        username: nickname,
+        password: password
+      };
 
-    //axios.post('http://localhost:5000/posts', post);
+      axios.get('http://localhost:5000/posts/' + nickname).then(resp => {
+        if (!resp.data.username) {
+          axios.post('http://localhost:5000/posts', post);
+
+          setNickname('');
+          setPassword('');
+          setPasswordConfirm('');
+
+          setFlag(true);
+        } else {
+          setNicknameValid(false);
+        }
+      });
+    } else {
+      setPasswordConfirmValid(false);
+    }
   };
   const onSubmitErr = e => {
     e.preventDefault();
@@ -78,6 +94,7 @@ const SignUp = ({}) => {
       <div className='some-form__line'>
         <input
           ref={inputNicknameRef}
+          value={nickname}
           placeholder='Nickname'
           className={nicknameValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -88,6 +105,7 @@ const SignUp = ({}) => {
       <div className='some-form__line'>
         <input
           ref={inputPasswordRef}
+          value={password}
           placeholder='Password'
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -98,6 +116,7 @@ const SignUp = ({}) => {
       <div className='some-form__line'>
         <input
           ref={inputPasswordConfirmRef}
+          value={passwordConfirm}
           placeholder='Confirm Password'
           className={passwordConfirmValid ? 'joinInput' : 'joinInput_error'}
           type='text'

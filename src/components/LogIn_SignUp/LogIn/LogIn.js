@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import axios from 'axios';
 
 import './LogIn.css';
@@ -19,15 +20,26 @@ const LogIn = ({ setFlag }) => {
     inputNicknameRef.current.focus();
   }, []);
 
-  const onSubmit = () => {
-    const post = {
-      title: nickname,
-      text: password
-    };
+  const onSubmit = e => {
+    axios.get('http://localhost:5000/posts/' + nickname).then(resp => {
+      console.log(
+        !(resp.data.username === nickname && resp.data.password === password)
+      );
+      if (
+        !(resp.data.username === nickname && resp.data.password === password)
+      ) {
+        setNickname('');
+        setPassword('');
 
-    setFlag(false);
+        setNicknameValid(false);
+        setPasswordValid(false);
+      } else {
+        const history = createBrowserHistory({ forceRefresh: true });
+        history.push('/' + nickname);
+      }
+    });
 
-    //axios.post('http://localhost:5000/posts', post);
+    e.preventDefault();
   };
   const onSubmitErr = e => {
     e.preventDefault();
@@ -67,6 +79,7 @@ const LogIn = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputNicknameRef}
+          value={nickname}
           placeholder='Nickname'
           className={nicknameValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -77,6 +90,7 @@ const LogIn = ({ setFlag }) => {
       <div className='some-form__line'>
         <input
           ref={inputPasswordRef}
+          value={password}
           placeholder='Password'
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
           type='text'
@@ -86,7 +100,7 @@ const LogIn = ({ setFlag }) => {
       </div>
       <Link
         onClick={e => (!nickname || !password ? onSubmitErr(e) : onSubmit(e))}
-        to={`/` + nickname + ``}
+        to={`/` + nickname}
       >
         <button className='button' type='submit'>
           Log In

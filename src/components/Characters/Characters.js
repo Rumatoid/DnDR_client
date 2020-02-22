@@ -12,18 +12,24 @@ import DragonTail from './PNG/DragonTail.png';
 import './Characters.css';
 
 const Characters = props => {
-  const [charactersList, setCharactersList] = useState([
-    'Rumatoid',
-    'Sehtil',
-    'Character_3',
-    'Character_4',
-    'Character_5',
-    'Character_6',
-    'Character_7'
-  ]);
+  const [charactersList, setCharactersList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/posts/' + props.match.params.Username)
+      .then(resp => {
+        setCharactersList(resp.data.characters);
+      });
+
+    console.log(process.env.REACT_APP_NOT_SECRET_CODE);
+  }, []);
 
   const handleDelete = name => {
     setCharactersList(charactersList.filter(el => el !== name));
+  };
+
+  const Submit = () => {
+    console.log('LOL');
   };
 
   return (
@@ -36,7 +42,7 @@ const Characters = props => {
           </div>
           <img src={Dragon} className='Characters_Dragon'></img>
           <div className='Character_createContainer'>
-            <Link className='Character_Btn' to={`/`}></Link>
+            <Link onClick={Submit} className='Character_Btn'></Link>
           </div>
         </div>
         <div className='Characters'>
