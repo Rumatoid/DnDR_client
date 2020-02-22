@@ -16,12 +16,12 @@ const Characters = props => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/posts/' + props.match.params.Username)
+      .get(
+        process.env.REACT_APP_DB_URI + '/posts/' + props.match.params.Username
+      )
       .then(resp => {
         setCharactersList(resp.data.characters);
       });
-
-    console.log(process.env.REACT_APP_NOT_SECRET_CODE);
   }, []);
 
   const handleDelete = name => {

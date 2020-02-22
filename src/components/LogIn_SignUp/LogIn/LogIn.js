@@ -21,23 +21,25 @@ const LogIn = ({ setFlag }) => {
   }, []);
 
   const onSubmit = e => {
-    axios.get('http://localhost:5000/posts/' + nickname).then(resp => {
-      console.log(
-        !(resp.data.username === nickname && resp.data.password === password)
-      );
-      if (
-        !(resp.data.username === nickname && resp.data.password === password)
-      ) {
-        setNickname('');
-        setPassword('');
+    axios
+      .get(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
+      .then(resp => {
+        console.log(
+          !(resp.data.username === nickname && resp.data.password === password)
+        );
+        if (
+          !(resp.data.username === nickname && resp.data.password === password)
+        ) {
+          setNickname('');
+          setPassword('');
 
-        setNicknameValid(false);
-        setPasswordValid(false);
-      } else {
-        const history = createBrowserHistory({ forceRefresh: true });
-        history.push('/' + nickname);
-      }
-    });
+          setNicknameValid(false);
+          setPasswordValid(false);
+        } else {
+          const history = createBrowserHistory({ forceRefresh: true });
+          history.push('/' + nickname);
+        }
+      });
 
     e.preventDefault();
   };
