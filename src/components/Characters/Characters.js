@@ -20,6 +20,7 @@ const Characters = props => {
         process.env.REACT_APP_DB_URI + '/posts/' + props.match.params.Username
       )
       .then(resp => {
+        console.log(resp.data);
         setCharactersList(resp.data.characters);
       });
   }, []);
