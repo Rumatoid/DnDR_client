@@ -24,22 +24,30 @@ const LogIn = ({ setFlag }) => {
     axios
       .post(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
       .then(resp => {
-        if (
-          !(
-            resp.data.user.username === nickname &&
-            resp.data.user.password === password
-          )
-        ) {
+        if (resp.data.user) {
+          if (
+            !(
+              resp.data.user.username === nickname &&
+              resp.data.user.password === password
+            )
+          ) {
+            setNickname('');
+            setPassword('');
+
+            setNicknameValid(false);
+            setPasswordValid(false);
+          } else {
+            localStorage.setItem('jwt', resp.data.token);
+
+            const history = createBrowserHistory({ forceRefresh: true });
+            history.push('/' + nickname);
+          }
+        } else {
           setNickname('');
           setPassword('');
 
           setNicknameValid(false);
           setPasswordValid(false);
-        } else {
-          localStorage.setItem('jwt', resp.data.token);
-
-          const history = createBrowserHistory({ forceRefresh: true });
-          history.push('/' + nickname);
         }
       });
 
