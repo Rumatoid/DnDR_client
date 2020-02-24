@@ -26,7 +26,7 @@ const SignUp = ({ setFlag }) => {
       };
 
       axios
-        .get(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
+        .post(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
         .then(resp => {
           if (!resp.data.user) {
             axios.post(process.env.REACT_APP_DB_URI + '/posts/', post);
