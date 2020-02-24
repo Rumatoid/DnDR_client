@@ -16,19 +16,25 @@ const Characters = props => {
   const [charactersList, setCharactersList] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        process.env.REACT_APP_DB_URI + '/posts/' + localStorage.getItem('jwt')
-      )
-      .then(resp => {
-        if (props.match.params.Username != resp.data.username) {
-          const history = createBrowserHistory({ forceRefresh: true });
+    if (localStorage.getItem('jwt')) {
+      axios
+        .get(
+          process.env.REACT_APP_DB_URI + '/posts/' + localStorage.getItem('jwt')
+        )
+        .then(resp => {
+          if (props.match.params.Username != resp.data.username) {
+            const history = createBrowserHistory({ forceRefresh: true });
 
-          history.push('/' + resp.data.username);
-        }
+            history.push('/' + resp.data.username);
+          }
 
-        setCharactersList(resp.data.characters);
-      });
+          setCharactersList(resp.data.characters);
+        });
+    } else {
+      const history = createBrowserHistory({ forceRefresh: true });
+
+      history.push('/');
+    }
   }, []);
 
   const handleDelete = name => {
