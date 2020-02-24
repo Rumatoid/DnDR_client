@@ -22,13 +22,13 @@ const LogIn = ({ setFlag }) => {
 
   const onSubmit = e => {
     axios
-      .get(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
+      .post(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
       .then(resp => {
-        console.log(
-          !(resp.data.username === nickname && resp.data.password === password)
-        );
         if (
-          !(resp.data.username === nickname && resp.data.password === password)
+          !(
+            resp.data.user.username === nickname &&
+            resp.data.user.password === password
+          )
         ) {
           setNickname('');
           setPassword('');
@@ -36,6 +36,8 @@ const LogIn = ({ setFlag }) => {
           setNicknameValid(false);
           setPasswordValid(false);
         } else {
+          localStorage.setItem('jwt', resp.data.token);
+
           const history = createBrowserHistory({ forceRefresh: true });
           history.push('/' + nickname);
         }

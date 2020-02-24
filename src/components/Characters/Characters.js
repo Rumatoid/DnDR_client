@@ -3,6 +3,7 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { createBrowserHistory } from 'history';
 
 import Character from './Character/Character';
 
@@ -17,16 +18,27 @@ const Characters = props => {
   useEffect(() => {
     axios
       .get(
-        process.env.REACT_APP_DB_URI + '/posts/' + props.match.params.Username
+        process.env.REACT_APP_DB_URI + '/posts/' + localStorage.getItem('jwt')
       )
       .then(resp => {
-        console.log(resp.data);
+        if (props.match.params.Username != resp.data.username) {
+          const history = createBrowserHistory({ forceRefresh: true });
+
+          history.push('/' + resp.data.username);
+        }
+
         setCharactersList(resp.data.characters);
       });
   }, []);
 
   const handleDelete = name => {
     setCharactersList(charactersList.filter(el => el !== name));
+
+    //Удаление персонажа из массива персонажей у пользователя
+    axios.put(
+      process.env.REACT_APP_DB_URI + '/posts/' + props.match.params.Username,
+      { characters: charactersList.filter(el => el !== name) }
+    );
   };
 
   const Submit = () => {
