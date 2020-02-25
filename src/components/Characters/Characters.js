@@ -73,24 +73,26 @@ const Characters = props => {
     <div className='charactersOuterContainer'>
       <div className='charactersInnerContainer'>
         <div className='Characters_create'>
-          <img src={DragonTail} className='Characters_DragonTail'></img>
+          {/* <img src={DragonTail} className='Characters_DragonTail'></img> */}
+
           <div className='Character_createContainer'>
-            <div className='Characters_createBtn'>Create a new character</div>
+            <div onClick={Submit} className='Characters_createBtn'>
+              Create a new character
+            </div>
           </div>
-          <img src={Dragon} className='Characters_Dragon'></img>
+          {/* <img src={Dragon} className='Characters_Dragon'></img> */}
+
           <div className='Character_createContainer'>
             <Link onClick={Submit} className='Character_Btn'></Link>
           </div>
         </div>
         <div className='Characters'>
           {characters.map((character, i) => (
-            <div key={i}>
-              <Character
-                name={character.name}
-                id={character.id}
-                handleDelete={handleDelete}
-              />
-            </div>
+            <Character
+              name={character.name}
+              id={character.id}
+              handleDelete={handleDelete}
+            />
           ))}
         </div>
       </div>

@@ -18,17 +18,21 @@ body {
   display: flex;
   justify-content: center;
   height: 100vh;
+  align-items: center;
   background-color: #19191a;
 }
 
 .charactersInnerContainer {
-  width: 810px;
-  margin-top: 40px;
+  padding: 10% 5% 0 5%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
 }
 
 .Characters_create {
-  margin-bottom: 90px;
-  position: relative;
+  /* position: relative; */
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .Character_createContainer {
@@ -37,11 +41,9 @@ body {
 }
 
 .Characters_createBtn {
-  position: absolute;
-  top: 147px;
+  padding: 0 15px;
+  z-index: 1;
 
-  width: 561px;
-  height: 75px;
   background: #b92020;
   border-radius: 5px;
 
@@ -59,31 +61,29 @@ body {
   top: 147px;
   left: 125px;
 
-  width: 561px;
   height: 75px;
 }
 
 .Characters_Dragon {
-  position: relative;
+  position: absolute;
+  z-index: 2;
+  /* top: -150%; */
+  /* left: 78%; */
 
-  left: 140px;
-  width: 286px;
-  height: 197px;
+  width: 25%;
 }
 
 .Characters_DragonTail {
   position: absolute;
 
-  top: 55%;
-  left: 72%;
-  width: 345px;
-  height: 133px;
+  top: 5%;
+
+  /* left: 78%; */
+  width: 35%;
 }
 
 .Characters {
-  width: 490px;
-  height: 380px;
-  margin: auto;
+  height: 370px;
   overflow: auto;
   flex: auto;
 }

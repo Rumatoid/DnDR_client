@@ -23,7 +23,7 @@ body {
 }
 
 .joinInnerContainer {
-  margin: 15% 5% 0 5%;
+  padding: 10% 5% 0 5%;
   height: 100vh;
   overflow: hidden;
   align-items: center;

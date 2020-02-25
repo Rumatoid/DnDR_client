@@ -1,8 +1,9 @@
 .Character_ul {
-  width: 463px;
   padding: 0;
   margin: 0;
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .Character_ul li {
@@ -10,10 +11,10 @@
 }
 
 .Character_ul .Character_li {
-  position: relative;
   border-radius: 50%;
-
-  float: right;
+  height: 62px;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 
 .Character_ul .Character_li:hover {
@@ -21,18 +22,15 @@
 }
 
 .Character_ul .Character_li:active {
-  box-shadow: 0 5px 25px rgb(255, 0, 0);
+  box-shadow: 0 0px 25px rgb(255, 0, 0);
 }
 
 .Character {
   color: #1b1b1b;
   background-color: #c4c4c4;
 
-  width: 388px;
-  height: 62px;
-
   font-size: 30px;
-  display: block;
+  width: 100%;
   outline: 0;
   padding: 15px 20px;
   border: 1px solid #ccc;
@@ -41,8 +39,5 @@
 }
 
 .character_image {
-  width: 62px;
-  height: 62px;
-  display: block;
-  margin: auto;
+  height: 100%;
 }
