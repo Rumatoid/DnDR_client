@@ -4,9 +4,9 @@ import './Character.css';
 
 import Delete from './Delete.png';
 
-const Character = ({ name, handleDelete }) => {
+const Character = ({ name, id, handleDelete }) => {
   const handleClick = () => {
-    handleDelete(name);
+    handleDelete(id);
   };
   return (
     <ul className='Character_ul'>

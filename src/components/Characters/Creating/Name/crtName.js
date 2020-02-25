@@ -26,10 +26,10 @@ const SignUp = ({ setFlag }) => {
       };
 
       axios
-        .post(process.env.REACT_APP_DB_URI + '/users/' + nickname)
+        .post(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
         .then(resp => {
           if (!resp.data.user) {
-            axios.post(process.env.REACT_APP_DB_URI + '/users/', post);
+            axios.post(process.env.REACT_APP_DB_URI + '/posts/', post);
 
             setNickname('');
             setPassword('');

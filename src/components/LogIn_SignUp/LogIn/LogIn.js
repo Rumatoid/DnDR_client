@@ -22,7 +22,7 @@ const LogIn = ({ setFlag }) => {
 
   const onSubmit = e => {
     axios
-      .post(process.env.REACT_APP_DB_URI + '/posts/' + nickname)
+      .post(process.env.REACT_APP_DB_URI + '/users/' + nickname)
       .then(resp => {
         if (resp.data.user) {
           if (

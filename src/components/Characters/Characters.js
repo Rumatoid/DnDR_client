@@ -13,42 +13,79 @@ import DragonTail from './PNG/DragonTail.png';
 import './Characters.css';
 
 const Characters = props => {
-  const [charactersList, setCharactersList] = useState([]);
+  const [characters, setCharacters] = useState([]);
+  const [charactersID, setCharactersID] = useState([]);
 
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
       axios
         .get(
-          process.env.REACT_APP_DB_URI + '/posts/' + localStorage.getItem('jwt')
+          process.env.REACT_APP_DB_URI + '/users/' + localStorage.getItem('jwt')
         )
-        .then(resp => {
-          if (props.match.params.Username != resp.data.username) {
+        .then(res => {
+          if (props.match.params.Username != res.data.username) {
             const history = createBrowserHistory({ forceRefresh: true });
 
-            history.push('/' + resp.data.username);
+            history.push('/' + res.data.username);
           }
 
-          setCharactersList(resp.data.characters);
+          setCharactersID(res.data.charactersID);
         });
     } else {
       const history = createBrowserHistory({ forceRefresh: true });
 
       history.push('/');
     }
-  }, []);
+  }, [props.match.params.Username]);
 
-  const handleDelete = name => {
-    setCharactersList(charactersList.filter(el => el !== name));
+  useEffect(() => {
+    axios
+      .get(
+        process.env.REACT_APP_DB_URI +
+          '/characters/' +
+          props.match.params.Username
+      )
+      .then(res => {
+        setCharacters(res.data);
+      });
+  }, [charactersID]);
 
-    //Удаление персонажа из массива персонажей у пользователя
+  const handleDelete = id => {
     axios.put(
-      process.env.REACT_APP_DB_URI + '/posts/' + props.match.params.Username,
-      { characters: charactersList.filter(el => el !== name) }
+      process.env.REACT_APP_DB_URI + '/users/' + props.match.params.Username,
+      { charactersID: charactersID.filter(el => el !== id) }
     );
+    axios
+      .delete(process.env.REACT_APP_DB_URI + '/characters/' + id)
+      .then(res => {
+        setCharactersID(charactersID.filter(el => el !== id));
+      });
   };
 
   const Submit = () => {
-    console.log('LOL');
+    setCharacters([...characters, 'New Character']);
+    axios
+      .post(
+        process.env.REACT_APP_DB_URI +
+          '/characters/' +
+          props.match.params.Username
+      )
+      .then(post_res => {
+        setCharactersID([...charactersID, post_res.data]);
+        axios
+          .get(
+            process.env.REACT_APP_DB_URI +
+              '/users/' +
+              localStorage.getItem('jwt')
+          )
+          .then(res => {
+            res.data.charactersID.push(post_res.data);
+            axios.put(
+              process.env.REACT_APP_DB_URI + '/users/' + res.data.username,
+              { charactersID: res.data.charactersID }
+            );
+          });
+      });
   };
 
   return (
@@ -65,9 +102,13 @@ const Characters = props => {
           </div>
         </div>
         <div className='Characters'>
-          {charactersList.map((characterOne, i) => (
+          {characters.map((character, i) => (
             <div key={i}>
-              <Character name={characterOne} handleDelete={handleDelete} />
+              <Character
+                name={character}
+                id={charactersID[i]}
+                handleDelete={handleDelete}
+              />
             </div>
           ))}
         </div>
