@@ -27,6 +27,11 @@ const Characters = props => {
 
             history.push('/' + res.data.username);
           }
+          if (res.data.username == undefined) {
+            const history = createBrowserHistory({ forceRefresh: true });
+
+            history.push('/');
+          }
 
           axios
             .get(
@@ -46,8 +51,10 @@ const Characters = props => {
   }, [props.match.params.Username]);
 
   const handleDelete = id => {
-    setCharacters(characters.filter(el => el.id != id));
-    axios.delete(process.env.REACT_APP_DB_URI + '/characters/' + id);
+    if (id) {
+      setCharacters(characters.filter(el => el.id != id));
+      axios.delete(process.env.REACT_APP_DB_URI + '/characters/' + id);
+    }
   };
 
   const Submit = () => {

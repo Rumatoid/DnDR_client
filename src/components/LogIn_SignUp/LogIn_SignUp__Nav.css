@@ -1,6 +1,5 @@
 .nav {
-  width: 430px;
-  height: 68px;
+  margin: auto;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-bottom: 40px;
@@ -34,14 +33,14 @@
   padding-bottom: 2px;
   color: #e1e3e6;
   border-bottom: 4px solid #ffffff;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
 .LogIn-inact button {
   opacity: 0.4;
-  padding-bottom: 0;
+  padding-bottom: 6px;
   color: rgba(255, 255, 255, 0.3);
   border-bottom: none;
 }
@@ -52,16 +51,14 @@
   padding-bottom: 2px;
   color: #e1e3e6;
   border-bottom: 4px solid #ffffff;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
 .SignUp-inact button {
   opacity: 0.4;
-  border: 0;
+  padding-bottom: 6px;
   color: rgba(255, 255, 255, 0.3);
-  text-decoration: none;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  border-bottom: none;
 }
