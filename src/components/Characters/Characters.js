@@ -51,14 +51,17 @@ const Characters = props => {
   }, [charactersID]);
 
   const handleDelete = id => {
-    axios.put(
-      process.env.REACT_APP_DB_URI + '/users/' + props.match.params.Username,
-      { charactersID: charactersID.filter(el => el !== id) }
-    );
     axios
-      .delete(process.env.REACT_APP_DB_URI + '/characters/' + id)
+      .put(
+        process.env.REACT_APP_DB_URI + '/users/' + props.match.params.Username,
+        { charactersID: charactersID.filter(el => el !== id) }
+      )
       .then(res => {
-        setCharactersID(charactersID.filter(el => el !== id));
+        axios
+          .delete(process.env.REACT_APP_DB_URI + '/characters/' + id)
+          .then(res => {
+            setCharactersID(charactersID.filter(el => el !== id));
+          });
       });
   };
 
