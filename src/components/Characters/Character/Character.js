@@ -11,7 +11,7 @@ const Character = ({ name, id, handleDelete }) => {
   return (
     <ul className='Character_ul'>
       <li className='Character'>{name}</li>
-      <li className='Character_li'>
+      <li onClick={handleClick} className='Character_li'>
         <img src={Delete} className='character_image'></img>
       </li>
     </ul>
