@@ -7,8 +7,8 @@ import { createBrowserHistory } from 'history';
 
 import Character from './Character/Character';
 
-import Dragon from './PNG/Dragon.png';
-import DragonTail from './PNG/DragonTail.png';
+import { ReactComponent as Dragon } from './PNG/Dragon.svg';
+import { ReactComponent as DragonTail } from './PNG/DragonTail.svg';
 
 import './Characters.css';
 
@@ -73,18 +73,15 @@ const Characters = props => {
     <div className='charactersOuterContainer'>
       <div className='charactersInnerContainer'>
         <div className='Characters_create'>
-          {/* <img src={DragonTail} className='Characters_DragonTail'></img> */}
-
+          <DragonTail className='Characters_DragonTail' />
           <div className='Character_createContainer'>
             <div onClick={Submit} className='Characters_createBtn'>
               Create a new character
             </div>
+            <div onClick={Submit} className='Character_Btn' />
           </div>
-          {/* <img src={Dragon} className='Characters_Dragon'></img> */}
-
-          <div className='Character_createContainer'>
-            <Link onClick={Submit} className='Character_Btn'></Link>
-          </div>
+          <Dragon className='Characters_Dragon' />
+          <div className='Character_createContainer'></div>
         </div>
         <div className='Characters'>
           {characters.map((character, i) => (

@@ -29,13 +29,20 @@
   color: #1b1b1b;
   background-color: #c4c4c4;
 
+  width: 80%;
+
   font-size: 30px;
-  width: 100%;
   outline: 0;
   padding: 15px 20px;
   border: 1px solid #ccc;
   border-radius: 0 15px 0 15px;
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .Character {
+    font-size: 20px;
+  }
 }
 
 .character_image {
