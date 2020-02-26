@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ScrollToBottom from 'react-scroll-to-bottom';
 
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { createBrowserHistory } from 'history';
 

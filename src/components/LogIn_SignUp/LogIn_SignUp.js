@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import axios from 'axios';
 
 import './LogIn_SignUp__Frames.css';
@@ -10,6 +10,22 @@ import SignUp from './LogIn/SignUp';
 
 const LogIn_SignUp = () => {
   const [flag, setFlag] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem('jwt')) {
+      axios
+        .get(
+          process.env.REACT_APP_DB_URI + '/users/' + localStorage.getItem('jwt')
+        )
+        .then(res => {
+          if (res.data.username) {
+            const history = createBrowserHistory({ forceRefresh: true });
+
+            history.push('/' + res.data.username);
+          }
+        });
+    }
+  }, []);
 
   const handleLog = e => {
     e.preventDefault();
