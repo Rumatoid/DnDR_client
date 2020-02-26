@@ -105,7 +105,7 @@ const LogIn = ({ setFlag }) => {
           value={password}
           placeholder='Password'
           className={passwordValid ? 'joinInput' : 'joinInput_error'}
-          type='text'
+          type='password'
           onChange={event => handlePasswordChange(event.target.value)}
           onKeyPress={handlePressEnter}
         />

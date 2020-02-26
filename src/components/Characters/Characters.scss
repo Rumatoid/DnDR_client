@@ -17,15 +17,15 @@ body {
 
 .charactersOuterContainer {
   display: flex;
-  justify-content: center;
   height: 100vh;
-  align-items: center;
+  width: 100%;
   background-color: #19191a;
+  justify-content: center;
 }
 
 .charactersInnerContainer {
   padding: 150px 5% 0 5%;
-  height: 100%;
+  height: 80vh;
   width: 60vw;
 
   align-items: center;
@@ -87,7 +87,7 @@ body {
 .Characters {
   width: 70%;
   margin: auto;
-  height: 370px;
+  height: 65%;
   overflow: auto;
 
   flex: auto;
@@ -108,6 +108,56 @@ body {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
+}
+
+.AngelContainer {
+  top: 87vh;
+  position: absolute;
+  overflow: hidden;
+  width: 200vw;
+  height: 50vh;
+
+  background: #b92020;
+  transform: skew(0, -20deg);
+}
+
+.Angel {
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+  opacity: 0;
+  position: relative;
+  top: 16.5vh;
+  overflow: hidden;
+  width: 200vw;
+  height: 0vh;
+  background-color: #19191a;
+}
+
+.AngelContainer:hover .Angel {
+  top: 4vh;
+  opacity: 1;
+  height: 25vh;
+}
+
+.Angel_btn {
+  border-radius: 30px 0 30px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  width: 15%;
+  height: 40%;
+  top: 10%;
+  left: 15%;
+
+  font-size: 40px;
+  line-height: 75px;
+  color: #e1e3e6;
+
+  cursor: pointer;
 }
 
 @media (max-width: 1440px) {
@@ -157,6 +207,10 @@ body {
 
   .Characters_createBtn {
     font-size: 30px;
+  }
+
+  .Angel_btn {
+    font-size: 25px;
   }
 }
 

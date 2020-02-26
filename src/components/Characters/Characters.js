@@ -8,10 +8,11 @@ import Character from './Character/Character';
 import { ReactComponent as Dragon } from './PNG/Dragon.svg';
 import { ReactComponent as DragonTail } from './PNG/DragonTail.svg';
 
-import './Characters.css';
+import './Characters.scss';
 
 const Characters = props => {
   const [characters, setCharacters] = useState([]);
+  const history = createBrowserHistory({ forceRefresh: true });
 
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
@@ -21,13 +22,9 @@ const Characters = props => {
         )
         .then(res => {
           if (props.match.params.Username != res.data.username) {
-            const history = createBrowserHistory({ forceRefresh: true });
-
             history.push('/' + res.data.username);
           }
           if (res.data.username == undefined) {
-            const history = createBrowserHistory({ forceRefresh: true });
-
             history.push('/');
           }
 
@@ -42,8 +39,6 @@ const Characters = props => {
             });
         });
     } else {
-      const history = createBrowserHistory({ forceRefresh: true });
-
       history.push('/');
     }
   }, [props.match.params.Username]);
@@ -65,6 +60,11 @@ const Characters = props => {
       .then(post_res => {
         setCharacters([...characters, post_res.data]);
       });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('jwt');
+    history.push('/');
   };
 
   return (
@@ -91,6 +91,11 @@ const Characters = props => {
               />
             </div>
           ))}
+        </div>
+      </div>
+      <div className='AngelContainer'>
+        <div onClick={handleLogout} className='Angel'>
+          <div className='Angel_btn'>LOGOUT</div>
         </div>
       </div>
     </div>
