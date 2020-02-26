@@ -94,8 +94,10 @@ const Characters = props => {
         </div>
       </div>
       <div className='AngelContainer'>
-        <div onClick={handleLogout} className='Angel'>
-          <div className='Angel_btn'>LOGOUT</div>
+        <div className='Angel'>
+          <div className='Angel_btn' onClick={handleLogout}>
+            LOGOUT
+          </div>
         </div>
       </div>
     </div>
