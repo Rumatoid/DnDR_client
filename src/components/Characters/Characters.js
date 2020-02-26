@@ -83,11 +83,13 @@ const Characters = props => {
         </div>
         <div className='Characters'>
           {characters.map((character, i) => (
-            <Character
-              name={character.name}
-              id={character.id}
-              handleDelete={handleDelete}
-            />
+            <div key={i}>
+              <Character
+                name={character.name}
+                id={character.id}
+                handleDelete={handleDelete}
+              />
+            </div>
           ))}
         </div>
       </div>
