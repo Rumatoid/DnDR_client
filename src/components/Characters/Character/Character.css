@@ -22,7 +22,7 @@
 }
 
 .Character_ul .Character_li:active {
-  box-shadow: 0 0px 25px rgb(255, 0, 0);
+  box-shadow: 0 7px 25px rgb(255, 0, 0);
 }
 
 .Character {

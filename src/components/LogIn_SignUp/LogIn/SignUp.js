@@ -25,21 +25,17 @@ const SignUp = ({ setFlag }) => {
         password: password
       };
 
-      axios
-        .post(process.env.REACT_APP_DB_URI + '/users/' + nickname)
-        .then(resp => {
-          if (!resp.data.user) {
-            axios.post(process.env.REACT_APP_DB_URI + '/users/', post);
+      axios.post(process.env.REACT_APP_DB_URI + '/users/', post).then(resp => {
+        if (!resp.data) {
+          setNickname('');
+          setPassword('');
+          setPasswordConfirm('');
 
-            setNickname('');
-            setPassword('');
-            setPasswordConfirm('');
-
-            setFlag(true);
-          } else {
-            setNicknameValid(false);
-          }
-        });
+          setFlag(true);
+        } else {
+          setNicknameValid(false);
+        }
+      });
     } else {
       setPasswordConfirmValid(false);
     }

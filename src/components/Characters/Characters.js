@@ -79,7 +79,6 @@ const Characters = props => {
             <div onClick={Submit} className='Character_Btn' />
           </div>
           <Dragon className='Characters_Dragon' />
-          <div className='Character_createContainer'></div>
         </div>
         <div className='Characters'>
           {characters.map((character, i) => (
