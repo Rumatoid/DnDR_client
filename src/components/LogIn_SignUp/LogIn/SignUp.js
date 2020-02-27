@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const SignUp = ({ setFlag }) => {
+const SignUp = ({ setFlag, flag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -14,7 +14,7 @@ const SignUp = ({ setFlag }) => {
   const [passwordConfirmValid, setPasswordConfirmValid] = useState(true);
 
   //Refs
-  const inputNicknameRef = React.createRef();
+  const inputNicknameSignRef = React.createRef();
   const inputPasswordRef = React.createRef();
   const inputPasswordConfirmRef = React.createRef();
 
@@ -33,13 +33,16 @@ const SignUp = ({ setFlag }) => {
 
           setFlag(true);
         } else {
+          inputNicknameSignRef.current.focus();
           setNicknameValid(false);
         }
       });
     } else {
       setPasswordConfirmValid(false);
+      inputPasswordConfirmRef.current.focus();
     }
   };
+
   const onSubmitErr = e => {
     e.preventDefault();
 
@@ -91,7 +94,7 @@ const SignUp = ({ setFlag }) => {
     <div>
       <div className='some-form__line'>
         <input
-          ref={inputNicknameRef}
+          ref={inputNicknameSignRef}
           value={nickname}
           placeholder='Nickname'
           className={nicknameValid ? 'joinInput' : 'joinInput_error'}

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './LogIn.css';
 
-const LogIn = ({ setFlag }) => {
+const LogIn = ({ flag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +19,12 @@ const LogIn = ({ setFlag }) => {
   useEffect(() => {
     inputNicknameRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    if (flag === true) {
+      inputNicknameRef.current.focus();
+    }
+  }, [flag]);
 
   const onSubmit = e => {
     axios
