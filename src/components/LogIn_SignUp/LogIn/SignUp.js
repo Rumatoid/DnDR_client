@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './LogIn.css';
 
-const SignUp = ({ setFlag, flag }) => {
+const SignUp = ({ setFlag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -19,7 +19,7 @@ const SignUp = ({ setFlag, flag }) => {
   const inputPasswordConfirmRef = React.createRef();
 
   const onSubmit = () => {
-    if (password == passwordConfirm) {
+    if (password === passwordConfirm) {
       const post = {
         username: nickname,
         password: password

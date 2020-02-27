@@ -51,10 +51,10 @@ const LogIn_SignUp = () => {
           </ul>
         </div>
         <div className={flag ? 'LogIn' : 'LogIn LogIn-left'}>
-          <LogIn setFlag={setFlag} flag={flag} />
+          <LogIn setFlag={setFlag} />
         </div>
         <div className={flag ? 'SignUp' : 'SignUp SignUp-left'}>
-          <SignUp setFlag={setFlag} flag={flag} />
+          <SignUp setFlag={setFlag} />
         </div>
       </div>
     </div>

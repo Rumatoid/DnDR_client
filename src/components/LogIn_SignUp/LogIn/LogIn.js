@@ -5,16 +5,16 @@ import axios from 'axios';
 
 import './LogIn.css';
 
+//Refs
+const inputNicknameRef = React.createRef();
+const inputPasswordRef = React.createRef();
+
 const LogIn = ({ flag }) => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
 
   const [nicknameValid, setNicknameValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
-
-  //Refs
-  const inputNicknameRef = React.createRef();
-  const inputPasswordRef = React.createRef();
 
   useEffect(() => {
     inputNicknameRef.current.focus();
@@ -26,7 +26,9 @@ const LogIn = ({ flag }) => {
     }
   }, [flag]);
 
-  const onSubmit = e => {
+  const onSubmit = () => {
+    inputNicknameRef.current.focus();
+
     axios
       .post(process.env.REACT_APP_DB_URI + '/users/' + nickname)
       .then(resp => {
@@ -57,7 +59,7 @@ const LogIn = ({ flag }) => {
         }
       });
 
-    e.preventDefault();
+    // e.preventDefault();
   };
   const onSubmitErr = e => {
     e.preventDefault();

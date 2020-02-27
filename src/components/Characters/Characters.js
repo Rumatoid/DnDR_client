@@ -10,9 +10,10 @@ import { ReactComponent as DragonTail } from './PNG/DragonTail.svg';
 
 import './Characters.scss';
 
+const history = createBrowserHistory({ forceRefresh: true });
+
 const Characters = props => {
   const [characters, setCharacters] = useState([]);
-  const history = createBrowserHistory({ forceRefresh: true });
 
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
@@ -21,10 +22,10 @@ const Characters = props => {
           process.env.REACT_APP_DB_URI + '/users/' + localStorage.getItem('jwt')
         )
         .then(res => {
-          if (props.match.params.Username != res.data.username) {
+          if (props.match.params.Username !== res.data.username) {
             history.push('/' + res.data.username);
           }
-          if (res.data.username == undefined) {
+          if (res.data.username === undefined) {
             history.push('/');
           }
 
@@ -45,7 +46,7 @@ const Characters = props => {
 
   const handleDelete = id => {
     if (id) {
-      setCharacters(characters.filter(el => el.id != id));
+      setCharacters(characters.filter(el => el.id !== id));
       axios.delete(process.env.REACT_APP_DB_URI + '/characters/' + id);
     }
   };
