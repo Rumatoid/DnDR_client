@@ -5,6 +5,11 @@ import axios from 'axios';
 import './Name.scss';
 
 const Name = () => {
+  //! Проверка при изменение размера окна
+  // window.addEventListener('resize', () => {
+  //   setSize(window.innerWidth);
+  // });
+
   return (
     <div className='creating_joinOuter-Container'>
       <div className='creating_Nav'>

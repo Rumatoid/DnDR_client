@@ -44,6 +44,7 @@ const Characters = props => {
     }
   }, [props.match.params.Username]);
 
+  //TODO Проверка на удаление
   const handleDelete = id => {
     if (id) {
       setCharacters(characters.filter(el => el.id !== id));
