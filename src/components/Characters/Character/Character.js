@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Character.css';
+import './Character.scss';
 
 import { ReactComponent as Delete } from '../PNG/Delete.svg';
 

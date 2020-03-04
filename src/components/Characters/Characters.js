@@ -65,12 +65,18 @@ const Characters = props => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('jwt');
-    history.push('/');
+    // localStorage.removeItem('jwt');
+    // history.push('/');
+    console.log('lol');
   };
 
   return (
     <div className='charactersOuterContainer'>
+      <div className='character_logoutBtn'>
+        <div className='character_logoutBtn-Text'>
+          <div onClick={handleLogout}>LOGOUT</div>
+        </div>
+      </div>
       <div className='charactersInnerContainer'>
         <div className='Characters_create'>
           <DragonTail className='Characters_DragonTail' />
@@ -92,13 +98,6 @@ const Characters = props => {
               />
             </div>
           ))}
-        </div>
-      </div>
-      <div className='AngelContainer'>
-        <div className='Angel'>
-          <div className='Angel_btn' onClick={handleLogout}>
-            LOGOUT
-          </div>
         </div>
       </div>
     </div>

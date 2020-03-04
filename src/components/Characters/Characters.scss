@@ -18,8 +18,45 @@ body {
   justify-content: center;
 }
 
+.character_logoutBtn {
+  display: flex;
+  justify-content: center;
+
+  transition: 0.5s ease;
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+  background-color: #b92020;
+  right: 5vh;
+  bottom: -7vh;
+  border-radius: 50%;
+}
+.character_logoutBtn:hover {
+  width: 15vh;
+  height: 15vh;
+  right: 2.5vh;
+
+  .character_logoutBtn-Text {
+    font-size: 25px;
+    opacity: 1;
+    width: 100%;
+  }
+}
+.character_logoutBtn-Text {
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 0;
+
+  font-size: 0px;
+  text-align: center;
+  line-height: 70px;
+  color: #e1e3e6;
+
+  cursor: pointer;
+}
+
 .charactersInnerContainer {
-  padding: 150px 5% 0 5%;
+  padding: 70px 5% 0 5%;
   height: 80vh;
   width: 60vw;
 
@@ -41,21 +78,21 @@ body {
 
 .Character_createContainer:hover {
   .Characters_createBtn {
-    background: #b81717;
     box-shadow: 0 0 25px #b92020;
   }
 }
 
 .Characters_createBtn {
-  transition: 0.5s ease;
+  transition: box-shadow 0.5s ease;
   padding: 0 10px;
   width: 100%;
   z-index: 1;
 
   background: #b92020;
+
   border-radius: 5px;
 
-  font-size: 40px;
+  font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 30px);
   text-align: center;
   line-height: 75px;
   color: #e1e3e6;
@@ -65,7 +102,7 @@ body {
 
 .Character_Btn {
   position: absolute;
-  width: 60vw;
+  width: 35vw;
   height: 75px;
   cursor: pointer;
   z-index: 3;
@@ -75,7 +112,7 @@ body {
   position: absolute;
   z-index: 2;
 
-  top: 3%;
+  top: 4.5%;
   width: 250px;
   .cls-1 {
     fill: white;
@@ -119,52 +156,12 @@ body {
   background-color: #555;
 }
 
-.AngelContainer {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;
-  height: 50vh;
-
-  background-color: #b92020;
-  clip-path: polygon(100% 25%, 25% 100%, 100% 100%);
-}
-
-.Angel {
-  transition: 0.5s ease-in-out;
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  background-color: #19191a;
-  clip-path: polygon(100% 32%, 100% 32%, 70% 100%, 70% 100%);
-}
-
-.AngelContainer:hover .Angel {
-  opacity: 1;
-  clip-path: polygon(100% 30%, 100% 100%, 100% 100%, 30% 100%);
-}
-
-.Angel_btn {
-  border-radius: 30px 0 30px 0;
-
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 0 2% 2% 0;
-
-  font-weight: 600;
-  font-size: 60px;
-  line-height: 75px;
-  color: #e1e3e6;
-
-  cursor: pointer;
-}
-
 @media (max-width: 1440px) {
   .charactersInnerContainer {
     width: 70vw;
   }
   .Character_Btn {
-    width: 70vw;
+    width: 45vw;
   }
 }
 
@@ -173,7 +170,11 @@ body {
     width: 80vw;
   }
   .Character_Btn {
-    width: 80vw;
+    width: 55vw;
+  }
+
+  .Characters_Dragon {
+    top: 3%;
   }
 }
 
@@ -182,13 +183,11 @@ body {
     width: 90vw;
   }
   .Character_Btn {
-    width: 90vw;
+    width: 65vw;
   }
-}
 
-@media (max-width: 850px) {
-  .Characters_createBtn {
-    font-size: 35px;
+  .Characters_Dragon {
+    top: 2%;
   }
 }
 
@@ -200,18 +199,18 @@ body {
     width: 90%;
   }
 
+  .Characters_Dragon {
+    top: 1.5%;
+  }
+
   .Characters_DragonTail {
     width: 0px;
   }
 
-  .Characters_createBtn {
-    font-size: 30px;
-  }
-
-  .Angel_btn {
-    top: 60%;
-
-    font-size: 25px;
+  .character_logoutBtn:hover {
+    .character_logoutBtn-Text {
+      font-size: 20px;
+    }
   }
 }
 
@@ -224,9 +223,5 @@ body {
   }
   .Characters {
     width: 100%;
-  }
-
-  .Characters_createBtn {
-    font-size: 25px;
   }
 }
