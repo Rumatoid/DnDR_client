@@ -46,10 +46,10 @@ body {
   transition: 0.5s ease-in-out;
   opacity: 0;
   width: 0;
+  transform: translateY(22%);
 
   font-size: 0px;
   text-align: center;
-  line-height: 70px;
   color: #e1e3e6;
 
   cursor: pointer;
