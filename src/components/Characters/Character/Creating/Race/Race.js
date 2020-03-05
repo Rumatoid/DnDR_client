@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 const Race = ({ setLink, url }) => {
   setLink('race');
+
   return <div>Race</div>;
 };
 

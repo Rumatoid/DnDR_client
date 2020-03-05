@@ -7,11 +7,7 @@ import './Name.scss';
 const Name = ({ setLink, url }) => {
   setLink('name');
 
-  return (
-    <div className='creating_inner'>
-      <div>Name</div>
-    </div>
-  );
+  return <div>Name</div>;
 };
 
 export default Name;

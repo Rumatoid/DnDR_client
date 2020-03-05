@@ -24,19 +24,20 @@ const Creating = props => {
       <Navbar link={link} />
       {/* <div className='middleLine'></div>
       <div className='middleLine_2'></div> */}
-
-      <Switch>
-        <Route path={`${url}/name`}>
-          <Name setLink={setLink} url={url} />
-        </Route>
-        <Route path={`${url}/race`}>
-          <Race setLink={setLink} url={url} />
-        </Route>
-        {
-          //TODO Страница ошибки
-        }
-        <div>Error</div>
-      </Switch>
+      <div className='creating_inner'>
+        <Switch>
+          <Route path={`${url}/name`}>
+            <Name setLink={setLink} url={url} />
+          </Route>
+          <Route path={`${url}/race`}>
+            <Race setLink={setLink} url={url} />
+          </Route>
+          {
+            //TODO Страница ошибки
+          }
+          <div>Error</div>
+        </Switch>
+      </div>
     </div>
   );
 };

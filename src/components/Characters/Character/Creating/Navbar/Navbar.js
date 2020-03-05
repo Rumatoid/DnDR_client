@@ -14,72 +14,64 @@ import './Navbar.scss';
 const Navbar = ({ link }) => {
   let { path, url } = useRouteMatch();
 
+  const checkActive = str => {
+    let res =
+      link === str
+        ? 'creating_NavEl-Container active'
+        : 'creating_NavEl-Container';
+    return res;
+  };
+
   return (
     <div className='creating_Nav'>
       <div>
         <div className='creating_Nav-Container'>
-          <div
-            className={
-              link === 'name'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('name')}>
             <Link to={`${url}/name`} className='creating_NavEl'>
               Имя
             </Link>
+            <div className='creating_NavEl-Text-Container'>
+              <div className='creating_NavEl-Text'>
+                Вложите некоторый смысл в своё имя, даже если вы просто
+                выбираете его из списка.
+              </div>
+            </div>
           </div>
-          <div
-            className={
-              link === 'race'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('race')}>
             <Link to={`${url}/race`} className='creating_NavEl'>
               Раса
             </Link>
+            <div className='creating_NavEl-Text-Container'>
+              <div className='creating_NavEl-Text'>
+                Раса, которую вы выбрали, придаёт индивидуальность вашему
+                персонажу, определяя характерную внешность и врождённые таланты,
+                полученные через культуру и происхождение.
+              </div>
+            </div>
           </div>
-          <div
-            className={
-              link === 'class'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('class')}>
             <Link to={`${url}/class`} className='creating_NavEl'>
               Класс
             </Link>
+            <div className='creating_NavEl-Text-Container'>
+              <div className='creating_NavEl-Text'>
+                Раса, которую вы выбрали, придаёт индивидуальность вашему
+                персонажу, определяя характерную внешность и врождённые таланты,
+                полученные через культуру и происхождение.
+              </div>
+            </div>
           </div>
-          <div
-            className={
-              link === 'abilities'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('abilities')}>
             <Link to={`${url}/abilities`} className='creating_NavEl'>
               Характеристики
             </Link>
           </div>
-          <div
-            className={
-              link === 'description'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('description')}>
             <Link to={`${url}/description`} className='creating_NavEl'>
               Описание
             </Link>
           </div>
-          <div
-            className={
-              link === 'equipment'
-                ? 'creating_NavEl-Container active'
-                : 'creating_NavEl-Container'
-            }
-          >
+          <div className={checkActive('equipment')}>
             <Link to={`${url}/equipment`} className='creating_NavEl'>
               Снаряжение
             </Link>
