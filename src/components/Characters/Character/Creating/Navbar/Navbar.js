@@ -11,6 +11,10 @@ import {
 
 import './Navbar.scss';
 
+import Info from './info';
+
+import data from './data';
+
 const Navbar = ({ link }) => {
   let { path, url } = useRouteMatch();
 
@@ -30,52 +34,37 @@ const Navbar = ({ link }) => {
             <Link to={`${url}/name`} className='creating_NavEl'>
               Имя
             </Link>
-            <div className='creating_NavEl-Text-Container'>
-              <div className='creating_NavEl-Text'>
-                Описание расы вашего персонажа включает примеры имён для
-                представителей этой расы. Вложите некоторый смысл в своё имя,
-                даже если вы просто выбираете его из списка.
-              </div>
-            </div>
+            <Info text={data.name} />
           </div>
           <div className={checkActive('race')}>
             <Link to={`${url}/race`} className='creating_NavEl'>
               Раса
             </Link>
-            <div className='creating_NavEl-Text-Container'>
-              <div className='creating_NavEl-Text'>
-                Раса, которую вы выбрали, придаёт индивидуальность вашему
-                персонажу, определяя характерную внешность и врождённые таланты,
-                полученные через культуру и происхождение.
-              </div>
-            </div>
+            <Info text={data.race} />
           </div>
           <div className={checkActive('class')}>
             <Link to={`${url}/class`} className='creating_NavEl'>
               Класс
             </Link>
-            <div className='creating_NavEl-Text-Container'>
-              <div className='creating_NavEl-Text'>
-                Раса, которую вы выбрали, придаёт индивидуальность вашему
-                персонажу, определяя характерную внешность и врождённые таланты,
-                полученные через культуру и происхождение.
-              </div>
-            </div>
+            <Info text={data.class} />
           </div>
           <div className={checkActive('abilities')}>
             <Link to={`${url}/abilities`} className='creating_NavEl'>
               Характеристики
             </Link>
+            <Info text={data.abilities} />
           </div>
           <div className={checkActive('description')}>
             <Link to={`${url}/description`} className='creating_NavEl'>
               Описание
             </Link>
+            <Info text={data.description} />
           </div>
           <div className={checkActive('equipment')}>
             <Link to={`${url}/equipment`} className='creating_NavEl'>
               Снаряжение
             </Link>
+            <Info text={data.equipment} />
           </div>
         </div>
       </div>

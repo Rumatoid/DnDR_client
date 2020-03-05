@@ -11,6 +11,10 @@ import './Creating.scss';
 
 import Name from './Name/Name';
 import Race from './Race/Race';
+import Class from './Class/Class';
+import Abilities from './Abilities/Abilities';
+import Description from './Description/Description';
+import Equipment from './Equipment/Equipment';
 
 import Navbar from './Navbar/Navbar';
 
@@ -31,6 +35,18 @@ const Creating = props => {
           </Route>
           <Route path={`${url}/race`}>
             <Race setLink={setLink} url={url} />
+          </Route>
+          <Route path={`${url}/class`}>
+            <Class setLink={setLink} url={url} />
+          </Route>
+          <Route path={`${url}/abilities`}>
+            <Abilities setLink={setLink} url={url} />
+          </Route>
+          <Route path={`${url}/description`}>
+            <Description setLink={setLink} url={url} />
+          </Route>
+          <Route path={`${url}/equipment`}>
+            <Equipment setLink={setLink} url={url} />
           </Route>
           {
             //TODO Страница ошибки
