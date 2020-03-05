@@ -65,9 +65,8 @@ const Characters = props => {
   };
 
   const handleLogout = () => {
-    // localStorage.removeItem('jwt');
-    // history.push('/');
-    console.log('lol');
+    localStorage.removeItem('jwt');
+    history.push('/');
   };
 
   return (
