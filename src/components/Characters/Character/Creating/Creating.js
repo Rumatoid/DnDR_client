@@ -9,51 +9,24 @@ import {
 
 import './Creating.scss';
 
-import Name from './Name/Name';
-import Race from './Race/Race';
-import Class from './Class/Class';
-import Abilities from './Abilities/Abilities';
-import Description from './Description/Description';
-import Equipment from './Equipment/Equipment';
-
 import Navbar from './Navbar/Navbar';
 
-const Creating = props => {
-  const [link, setLink] = useState('');
+import * as funcs from './longFuncs';
 
-  let { path, url } = useRouteMatch();
+const Creating = props => {
+  const [link, setLink] = useState(props.match.params.type);
+
+  useEffect(() => {}, []);
+
+  useEffect(() => {
+    setLink(props.match.params.type);
+  }, [props.match.params.type]);
 
   return (
     <div className='creating_joinOuter-Container'>
-      <Navbar link={link} />
-      {/* <div className='middleLine'></div>
-      <div className='middleLine_2'></div> */}
-      <div className='creating_inner'>
-        <Switch>
-          <Route path={`${url}/name`}>
-            <Name setLink={setLink} url={url} />
-          </Route>
-          <Route path={`${url}/race`}>
-            <Race setLink={setLink} url={url} />
-          </Route>
-          <Route path={`${url}/class`}>
-            <Class setLink={setLink} url={url} />
-          </Route>
-          <Route path={`${url}/abilities`}>
-            <Abilities setLink={setLink} url={url} />
-          </Route>
-          <Route path={`${url}/description`}>
-            <Description setLink={setLink} url={url} />
-          </Route>
-          <Route path={`${url}/equipment`}>
-            <Equipment setLink={setLink} url={url} />
-          </Route>
-          {
-            //TODO Страница ошибки
-          }
-          <div>Error</div>
-        </Switch>
-      </div>
+      <Navbar link={link} props={props} />
+
+      <div className='creating_inner'>{funcs.mainComponent(link)}</div>
     </div>
   );
 };

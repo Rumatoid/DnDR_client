@@ -12,9 +12,7 @@ import Info from './info';
 
 import data from './data';
 
-const Navbar = ({ link }) => {
-  let { path, url } = useRouteMatch();
-
+const Navbar = ({ link, props }) => {
   const checkActive = str => {
     let res =
       link === str
@@ -23,44 +21,47 @@ const Navbar = ({ link }) => {
     return res;
   };
 
+  const handleBack = () => {};
+
   return (
     <div className='creating_Nav'>
-      <Back className='crating_Nav-backImg' />
-
+      <Link to={'/' + props.match.params.Username}>
+        <Back className='crating_Nav-backImg' />
+      </Link>
       <div>
         <div className='creating_Nav-Container'>
           <div className={checkActive('name')}>
-            <Link to={`${url}/name`} className='creating_NavEl'>
+            <Link to={'name'} className='creating_NavEl'>
               Имя
             </Link>
             <Info text={data.name} />
           </div>
           <div className={checkActive('race')}>
-            <Link to={`${url}/race`} className='creating_NavEl'>
+            <Link to={'race'} className='creating_NavEl'>
               Раса
             </Link>
             <Info text={data.race} />
           </div>
           <div className={checkActive('class')}>
-            <Link to={`${url}/class`} className='creating_NavEl'>
+            <Link to={'class'} className='creating_NavEl'>
               Класс
             </Link>
             <Info text={data.class} />
           </div>
           <div className={checkActive('abilities')}>
-            <Link to={`${url}/abilities`} className='creating_NavEl'>
+            <Link to={'abilities'} className='creating_NavEl'>
               Характеристики
             </Link>
             <Info text={data.abilities} />
           </div>
           <div className={checkActive('description')}>
-            <Link to={`${url}/description`} className='creating_NavEl'>
+            <Link to={'description'} className='creating_NavEl'>
               Описание
             </Link>
             <Info text={data.description} />
           </div>
           <div className={checkActive('equipment')}>
-            <Link to={`${url}/equipment`} className='creating_NavEl'>
+            <Link to={'equipment'} className='creating_NavEl'>
               Снаряжение
             </Link>
             <Info text={data.equipment} />

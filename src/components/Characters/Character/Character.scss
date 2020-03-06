@@ -11,6 +11,10 @@
 }
 
 .Character_ul .Character_li {
+  box-shadow: 0 0 0 rgb(163, 40, 40);
+
+  transition: 0.4s ease;
+
   border-radius: 50%;
   height: 62px;
   margin-left: 5%;
@@ -29,7 +33,11 @@
   color: #1b1b1b;
   background-color: #c4c4c4;
 
+  box-shadow: 0 0 0 rgb(163, 40, 40);
+
   width: 80%;
+
+  transition: 0.4s ease;
 
   font-size: 30px;
   outline: 0;
@@ -37,6 +45,12 @@
   border: 1px solid #ccc;
   border-radius: 0 15px 0 15px;
   cursor: pointer;
+}
+
+.Character:hover {
+  box-shadow: 5px 5px 5px rgb(163, 40, 40);
+
+  background-color: #cccccc;
 }
 
 @media (max-width: 750px) {

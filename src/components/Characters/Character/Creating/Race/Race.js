@@ -4,9 +4,7 @@ import axios from 'axios';
 
 import Navbar from '../Navbar/Navbar';
 
-const Race = ({ setLink, url }) => {
-  setLink('race');
-
+const Race = ({}) => {
   return <div>Race</div>;
 };
 

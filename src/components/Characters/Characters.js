@@ -52,6 +52,10 @@ const Characters = props => {
     }
   };
 
+  const handleChoose = id => {
+    history.push(`/${props.match.params.Username}/${id}/builder/name`);
+  };
+
   const Submit = () => {
     axios
       .post(
@@ -61,7 +65,7 @@ const Characters = props => {
       )
       .then(post_res => {
         history.push(
-          `/${props.match.params.Username}/${post_res.data.id}/name`
+          `/${props.match.params.Username}/${post_res.data.id}/builder/name`
         );
       });
   };
@@ -96,6 +100,7 @@ const Characters = props => {
                 name={character.name}
                 id={character.id}
                 handleDelete={handleDelete}
+                handleChoose={handleChoose}
               />
             </div>
           ))}

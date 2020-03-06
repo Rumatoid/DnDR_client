@@ -4,9 +4,7 @@ import axios from 'axios';
 
 import './Class.scss';
 
-const Class = ({ setLink, url }) => {
-  setLink('class');
-
+const Class = ({}) => {
   return <div>Class</div>;
 };
 

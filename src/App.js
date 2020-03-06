@@ -9,8 +9,8 @@ import Creating from './components/Characters/Character/Creating/Creating';
 const App = () => (
   <Router>
     <Route path='/' exact component={LogIn_SignUp} />
-    <Route path='/:Username' exact component={Characters} />
-    <Route path='/:Username/:id/' component={Creating} />
+    <Route exact path='/:Username' component={Characters} />
+    <Route path='/:Username/:id/builder/:type' component={Creating} />
   </Router>
 );
 

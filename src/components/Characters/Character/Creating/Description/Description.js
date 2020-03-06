@@ -4,9 +4,7 @@ import axios from 'axios';
 
 import './Description.scss';
 
-const Description = ({ setLink, url }) => {
-  setLink('description');
-
+const Description = () => {
   return <div>Description</div>;
 };
 
