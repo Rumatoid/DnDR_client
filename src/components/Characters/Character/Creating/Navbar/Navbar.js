@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useRouteMatch
-} from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
+
+import { ReactComponent as Back } from './Back.svg';
 
 import './Navbar.scss';
 
@@ -28,6 +25,8 @@ const Navbar = ({ link }) => {
 
   return (
     <div className='creating_Nav'>
+      <Back className='crating_Nav-backImg' />
+
       <div>
         <div className='creating_Nav-Container'>
           <div className={checkActive('name')}>

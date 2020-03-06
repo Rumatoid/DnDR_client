@@ -18,7 +18,7 @@
 
   position: static;
 
-  margin-top: 3%;
+  margin-top: 2.5%;
   padding: 0 10px;
 }
 
@@ -103,7 +103,6 @@
   position: absolute;
   transition: none;
 
-  // padding: 10px 10px 30px 10px;
   top: 6%;
   left: calc(50vw - 340px);
   opacity: 0;
@@ -111,4 +110,16 @@
 
 .creating_NavEl-Text {
   width: 0;
+}
+
+.crating_Nav-backImg {
+  position: absolute;
+  width: 25px;
+
+  top: 10px;
+  right: 10px;
+
+  .cls-1 {
+    fill: #19191a;
+  }
 }

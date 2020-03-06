@@ -60,7 +60,9 @@ const Characters = props => {
           props.match.params.Username
       )
       .then(post_res => {
-        setCharacters([...characters, post_res.data]);
+        history.push(
+          `/${props.match.params.Username}/${post_res.data.id}/name`
+        );
       });
   };
 
