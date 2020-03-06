@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { createBrowserHistory } from 'history';
 import axios from 'axios';
 
-import './LogIn_SignUp__Frames.css';
-import './LogIn_SignUp__Nav.css';
+import './LogIn_SignUp__Frames.scss';
+import './LogIn_SignUp__Nav.scss';
 
 import LogIn from './LogIn/LogIn';
 import SignUp from './LogIn/SignUp';

@@ -1,3 +1,5 @@
+@import 'public/utilities/variables';
+
 .some-form__line {
   border-radius: 0px;
   display: block;
@@ -48,7 +50,7 @@
 
 .button {
   font-size: 30px;
-  color: #e1e3e6 !important;
+  color: $mainText-color !important;
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 20px;

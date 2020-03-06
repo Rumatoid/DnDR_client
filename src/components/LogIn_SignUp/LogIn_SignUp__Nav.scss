@@ -1,3 +1,5 @@
+@import 'public/utilities/variables';
+
 .nav {
   margin: auto;
   -webkit-transition: all 0.5s ease;
@@ -31,7 +33,7 @@
   opacity: 1;
 
   padding-bottom: 2px;
-  color: #e1e3e6;
+  color: $mainText-color;
   border-bottom: 4px solid #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -49,7 +51,7 @@
   opacity: 1;
 
   padding-bottom: 2px;
-  color: #e1e3e6;
+  color: $mainText-color;
   border-bottom: 4px solid #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;

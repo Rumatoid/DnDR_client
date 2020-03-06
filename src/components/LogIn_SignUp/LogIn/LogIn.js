@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import axios from 'axios';
 
-import './LogIn.css';
+import './LogIn.scss';
 
 //Refs
 const inputNicknameRef = React.createRef();
