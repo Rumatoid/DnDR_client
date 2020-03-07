@@ -44,7 +44,7 @@ const Characters = props => {
   };
 
   const handleChoose = id => {
-    history.push(`/${props.match.params.Username}/${id}/builder/name`);
+    history.push(`/${props.match.params.Username}/${id}/builder/race`);
   };
 
   const Submit = () => {
@@ -56,7 +56,7 @@ const Characters = props => {
       )
       .then(post_res => {
         history.push(
-          `/${props.match.params.Username}/${post_res.data.id}/builder/name`
+          `/${props.match.params.Username}/${post_res.data.id}/builder/race`
         );
       });
   };
