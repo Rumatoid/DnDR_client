@@ -1,43 +1,34 @@
 import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
-import { createBrowserHistory } from 'history';
 
 import Character from './Character/Character';
 
 import { ReactComponent as Dragon } from './PNG/Dragon.svg';
 import { ReactComponent as DragonTail } from './PNG/DragonTail.svg';
 
-import './Characters.scss';
+import * as funcs from '../../funcs/Auth';
+import * as checkAuth from '../../funcs/checkAuth';
 
-const history = createBrowserHistory({ forceRefresh: true });
+import './Characters.scss';
 
 const Characters = props => {
   const [characters, setCharacters] = useState([]);
 
+  const history = props.history;
+
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
+      checkAuth.checkAuth(props);
+
       axios
         .get(
-          process.env.REACT_APP_DB_URI + '/users/' + localStorage.getItem('jwt')
+          process.env.REACT_APP_DB_URI +
+            '/characters/' +
+            props.match.params.Username
         )
         .then(res => {
-          if (props.match.params.Username !== res.data.username) {
-            history.push('/' + res.data.username);
-          }
-          if (res.data.username === undefined) {
-            history.push('/');
-          }
-
-          axios
-            .get(
-              process.env.REACT_APP_DB_URI +
-                '/characters/' +
-                props.match.params.Username
-            )
-            .then(res => {
-              setCharacters(res.data);
-            });
+          setCharacters(res.data);
         });
     } else {
       history.push('/');

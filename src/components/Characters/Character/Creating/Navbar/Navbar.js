@@ -21,8 +21,6 @@ const Navbar = ({ link, props }) => {
     return res;
   };
 
-  const handleBack = () => {};
-
   return (
     <div className='creating_Nav'>
       <Link to={'/' + props.match.params.Username}>
@@ -30,12 +28,6 @@ const Navbar = ({ link, props }) => {
       </Link>
       <div>
         <div className='creating_Nav-Container'>
-          <div className={checkActive('name')}>
-            <Link to={'name'} className='creating_NavEl'>
-              Имя
-            </Link>
-            <Info text={data.name} />
-          </div>
           <div className={checkActive('race')}>
             <Link to={'race'} className='creating_NavEl'>
               Раса

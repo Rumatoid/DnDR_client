@@ -50,11 +50,11 @@
 
 .button {
   font-size: 30px;
-  color: $mainText-color !important;
+  color: $gray_100 !important;
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 20px;
-  background: #b92020;
+  background: $red;
   border-radius: 0 5px 0 5px;
   display: inline-block;
   border: none;

@@ -2,17 +2,28 @@
 
 html,
 body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  background-color: $gray_900;
+  overflow: hidden;
+}
+
+#root {
   overflow: hidden;
 }
 
 .charactersOuterContainer {
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
 
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: $background-color;
+  background-color: $gray_900;
   justify-content: center;
 }
 
@@ -24,7 +35,7 @@ body {
   position: absolute;
   width: 10vh;
   height: 10vh;
-  background-color: #b92020;
+  background-color: $red;
   right: 5vh;
   bottom: -7vh;
   border-radius: 50%;
@@ -48,7 +59,7 @@ body {
 
   font-size: 0px;
   text-align: center;
-  color: $mainText-color;
+  color: $gray_100;
 
   cursor: pointer;
 }
@@ -76,7 +87,7 @@ body {
 
 .Character_createContainer:hover {
   .Characters_createBtn {
-    box-shadow: 0 0 25px #b92020;
+    box-shadow: 0 0 25px $red;
   }
 }
 
@@ -86,14 +97,14 @@ body {
   width: 100%;
   z-index: 1;
 
-  background: #b92020;
+  background: $red;
 
   border-radius: 5px;
 
   font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 30px);
   text-align: center;
   line-height: 75px;
-  color: $mainText-color;
+  color: $gray_100;
 
   cursor: pointer;
 }

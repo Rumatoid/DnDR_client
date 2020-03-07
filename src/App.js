@@ -10,7 +10,7 @@ const App = () => (
   <Router>
     <Route path='/' exact component={LogIn_SignUp} />
     <Route exact path='/:Username' component={Characters} />
-    <Route path='/:Username/:id/builder/:type' component={Creating} />
+    <Route exact path='/:Username/:id/builder/:type' component={Creating} />
   </Router>
 );
 

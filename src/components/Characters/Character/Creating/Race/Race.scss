@@ -1,0 +1,122 @@
+@import 'public/utilities/variables';
+
+.creating_Race-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.creating_Race-races-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.creating_Race-RaceEl-Container {
+  width: 411px;
+
+  position: relative;
+  margin-bottom: 31px;
+}
+
+.creating_Race-RaceEl {
+  transition: 0.8s ease-in-out;
+  transition-delay: 0s;
+
+  position: relative;
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0 100%,
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  height: 58px;
+
+  padding-left: 20px;
+  background: $gray_300;
+  border-radius: 0 20px 0 20px;
+
+  font-weight: 400;
+
+  font-size: 30px;
+  color: $gray_950;
+  line-height: 58px;
+
+  cursor: pointer;
+}
+
+.creating_Race-RaceEl2 {
+  transition: 0.6s ease-in-out;
+  transition-delay: 0s;
+
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #aaaeb34b;
+  padding-left: 15px;
+
+  height: 58px;
+
+  padding-left: 20px;
+  border-radius: 0 20px 0 20px;
+
+  font-weight: 400;
+
+  font-size: 30px;
+  line-height: 58px;
+
+  cursor: pointer;
+
+  color: $gray_100;
+}
+
+.creating_Race-RaceEl::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  left: 100%;
+  width: 100%;
+  opacity: 1;
+  height: 4px;
+  background-color: $gray_600;
+  transition: none;
+}
+
+.creating_Race-RaceEl-Container:hover {
+  .creating_Race-RaceEl::after {
+    opacity: 0;
+    left: 0%;
+    transition: left 0.3s, opacity 0.9s cubic-bezier(1, 0, 1, 1);
+  }
+  .creating_Race-RaceEl {
+    transition-delay: 0.1s;
+
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0 100%,
+      100% 100%,
+      100% 0,
+      0 0
+    );
+  }
+
+  .creating_Race-RaceEl2 {
+    transition-delay: 0.5s;
+
+    transform: translateX(5px);
+  }
+}

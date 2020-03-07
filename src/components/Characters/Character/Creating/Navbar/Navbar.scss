@@ -1,11 +1,18 @@
 @import 'public/utilities/variables';
 
 .creating_Nav {
+  position: relative;
   width: 100%;
-  height: 18%;
-  background-image: linear-gradient(90deg, #b92020 -20%, #166372 120%);
+  height: 18vh;
+  // background-image: linear-gradient(
+  //   90deg,
+  //   $red_alpha50 -20%,
+  //   $blue_alpha50 120%
+  // );
   justify-content: center;
   display: flex;
+
+  z-index: 3;
 }
 
 .creating_Nav-Container {
@@ -28,14 +35,14 @@
   padding: 5px 20px 5px;
 
   font-size: 16px;
-  color: $mainText-color;
+  color: $gray_100;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .creating_NavEl-Container:after {
-  background-color: $background-color;
+  background-color: $gray_900;
   border-radius: 10px;
   margin-top: 1%;
   display: block;
@@ -54,7 +61,7 @@
 }
 
 .creating_NavEl-Container.active:after {
-  background-color: #e1e3e6;
+  background-color: $gray_100;
   width: 100%;
   left: 0%;
   height: 3px;
@@ -68,12 +75,12 @@
     align-items: center;
 
     clip-path: circle(5% at 50% 50%);
-    background: #19191a69;
+    background: #c4c4c465;
     border-radius: 20px;
 
     opacity: 1;
     width: 680px;
-    height: 11%;
+    height: 11vh;
   }
 
   .creating_NavEl-Text {
@@ -84,13 +91,14 @@
 
     text-align: center;
     font-size: 16px;
-    color: #c4c4c4;
+    color: $gray_100;
     cursor: pointer;
     width: 100%;
   }
 
   .creating_NavEl-Text-Container:hover {
     clip-path: circle(75%);
+    background: #19191a69;
 
     .creating_NavEl-Text {
       clip-path: circle(100%);
@@ -104,7 +112,7 @@
   position: absolute;
   transition: none;
 
-  top: 6%;
+  top: 30%;
   left: calc(50vw - 340px);
   opacity: 0;
 }
@@ -121,6 +129,6 @@
   right: 10px;
 
   .cls-1 {
-    fill: $background-color;
+    fill: $gray_900;
   }
 }

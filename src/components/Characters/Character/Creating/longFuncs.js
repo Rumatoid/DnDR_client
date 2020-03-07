@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Name from './Name/Name';
 import Race from './Race/Race';
 import Class from './Class/Class';
 import Abilities from './Abilities/Abilities';
@@ -9,9 +8,6 @@ import Equipment from './Equipment/Equipment';
 
 export const mainComponent = link => {
   switch (link) {
-    case 'name':
-      return <Name />;
-      break;
     case 'race':
       return <Race />;
       break;

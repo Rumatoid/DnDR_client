@@ -6,6 +6,8 @@ body {
   font-style: normal;
   padding: 0;
   margin: 0;
+  background-color: $gray_900;
+  overflow: visible;
 }
 
 #root {
@@ -21,7 +23,6 @@ body {
   justify-content: center;
   height: 100vh;
   align-items: center;
-  background-color: $background-color;
 }
 
 .joinInnerContainer {

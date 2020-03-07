@@ -1,36 +1,51 @@
 @import 'public/utilities/variables';
 
 .creating_joinOuter-Container {
+  position: relative;
+  overflow-y: auto;
+  z-index: 4;
+
   height: 100vh;
   width: 100%;
-  background-color: $background-color;
+  // background-color: $gray_900;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
   justify-content: center;
   align-items: center;
 }
 
-.middleLine {
-  position: absolute;
-  clip-path: polygon(0 50%, 100% 0%, 100% 50%, 0 100%);
-  top: 30%;
+.background {
+  z-index: 1;
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 30%;
-  background-image: linear-gradient(-90deg, #b92020 -20%, #166372 120%);
+  height: 100%;
 }
 
-.middleLine_2 {
-  z-index: 0;
-  position: absolute;
-  clip-path: polygon(0 0%, 100% 50%, 100% 100%, 0 50%);
-  top: 75%;
-  width: 100%;
-  height: 50%;
-  background-image: linear-gradient(90deg, #b92020 -20%, #166372 120%);
+.creating_joinOuter-Container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.creating_joinOuter-Container::-webkit-scrollbar {
+  background-color: #454547af;
+  border-radius: 10px;
+  width: 12px;
+}
+
+.creating_joinOuter-Container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
 }
 
 .creating_inner {
   position: relative;
-  height: 100vh;
-  background-color: $background-color;
+  // background-color: $gray_900;
+
   justify-content: center;
   align-items: center;
   z-index: 3;
