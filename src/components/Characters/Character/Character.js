@@ -15,9 +15,11 @@ const Character = ({ name, id, handleDelete, handleChoose }) => {
 
   return (
     <ul className='Character_ul'>
-      <li onClick={handleClickChoose} className='Character'>
-        {name}
+      <li onClick={handleClickChoose} className='Character_li-Container'>
+        <div className='Character2'>{name}</div>
+        <div className='Character'>{name}</div>
       </li>
+
       <li onClick={handleClickDelete} className='Character_li'>
         <Delete className='character_image' />
       </li>
