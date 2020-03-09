@@ -1,9 +1,13 @@
 @import 'public/utilities/variables';
 
+$fontsize: 26px;
+
 .creating_Race-container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-size: $fontsize;
 }

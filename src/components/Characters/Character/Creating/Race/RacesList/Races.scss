@@ -1,5 +1,7 @@
 @import 'public/utilities/variables';
 
+$fontsize: 30px;
+
 .creating_Race-races-Container {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,7 @@
   align-items: center;
 
   user-select: none;
+  width: 85%;
 }
 
 .creating_Race-RaceEl-Container {
@@ -41,7 +44,6 @@
 
   font-weight: 400;
 
-  font-size: 30px;
   color: $gray_950;
   line-height: 58px;
 
@@ -62,7 +64,6 @@
   border-radius: 0 20px 0 20px;
 
   font-weight: 400;
-  font-size: 30px;
   line-height: 58px;
   cursor: pointer;
   color: $gray_100;
@@ -117,7 +118,6 @@
 
 .creating_Race-RaceEl_race {
   font-weight: 400;
-  font-size: 30px;
   line-height: 42px;
 }
 

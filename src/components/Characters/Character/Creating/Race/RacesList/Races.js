@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Races.scss';
 import './dropDown.scss';
+import './media.scss';
 
 const Races = () => {
   let races = [
