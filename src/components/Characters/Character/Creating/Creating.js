@@ -52,7 +52,7 @@ const Creating = props => {
 
   return (
     <div className='creating_joinOuter-Container' style={style}>
-      <Navbar link={link} props={props} />
+      <Navbar link={link} props={props} size={size} />
       <div className='creating_inner'>{longFuncs.mainComponent(link)}</div>
     </div>
   );
