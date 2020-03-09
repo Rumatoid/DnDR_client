@@ -1,78 +1,5 @@
 @import 'public/utilities/variables';
 
-.creating_Nav {
-}
-
-.creating_Nav-Container {
-  margin-top: 2%;
-  display: flex;
-  justify-content: center;
-  font-size: 16px;
-  // width: 100%;
-
-  overflow: hidden;
-}
-
-.creating_NavEl-Container {
-  transition: 0.5s ease-in-out;
-
-  padding: 0 10px;
-}
-
-.creating_NavEl {
-  // display: flex;
-  // justify-content: center;
-  font-size: 16px;
-  // width: 50px;
-  // padding: 5px 10px 5px;
-  text-decoration: none;
-
-  color: $gray_100;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.creating_NavElAct {
-  display: flex;
-  justify-content: center;
-  font-size: 16px;
-  // width: 50px;
-  // padding: 5px 10px 5px;
-  text-decoration: none;
-
-  color: $gray_100;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.creating_NavEl-Container:after {
-  background-color: $gray_900;
-  border-radius: 10px;
-  margin-top: 1%;
-  display: block;
-  position: relative;
-  content: '';
-  height: 4px;
-  width: 0%;
-  left: 50%;
-  transition: none;
-}
-
-.creating_NavEl-Container:hover::after {
-  transition: 0.3s ease-in-out;
-  width: 100%;
-  left: 0%;
-}
-
-.creating_NavEl-Container.active:after {
-  background-color: $gray_100;
-  width: 100%;
-  left: 0%;
-  height: 3px;
-}
-
 .crating_Nav-backImg {
   position: absolute;
   width: 25px;
@@ -96,11 +23,11 @@
   margin: auto;
   margin-top: 10px;
 
-  width: 90vw;
+  width: 100vw;
 }
 
 .creating_Nav-views {
-  padding: 0 34.5%;
+  padding: 0 36%;
 }
 
 .creating_Nav-view {
@@ -130,7 +57,7 @@
   transition: none;
 
   background-color: $gray_100;
-  width: 120%;
-  left: -10%;
+  width: 100%;
+  left: 0%;
   height: 3px;
 }
