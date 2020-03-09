@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Race from './Race/Race';
-import Class from './Class/Class';
-import Abilities from './Abilities/Abilities';
-import Description from './Description/Description';
-import Equipment from './Equipment/Equipment';
+import Race from '../Race/Race';
+import Class from '../Class/Class';
+import Abilities from '../Abilities/Abilities';
+import Description from '../Description/Description';
+import Equipment from '../Equipment/Equipment';
 
 export const mainComponent = link => {
   switch (link) {

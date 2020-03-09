@@ -5,7 +5,7 @@ import './Creating.scss';
 
 import Navbar from './Navbar/Navbar';
 
-import * as longFuncs from './longFuncs';
+import * as longFuncs from './utils/longFuncs';
 import * as funcs from '../../../../funcs/Auth';
 import * as checkAuth from '../../../../funcs/checkAuth';
 

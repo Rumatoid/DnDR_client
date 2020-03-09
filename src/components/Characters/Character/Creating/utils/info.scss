@@ -1,0 +1,58 @@
+@import 'public/utilities/variables';
+
+.creating_NavEl-Text-Container {
+  transition: ease-in-out 0.5s;
+
+  clip-path: circle(6% at 50% 50%);
+  background: #aaaeb381;
+  width: 100%;
+  border-radius: 20px;
+
+  opacity: 1;
+  height: 11vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 16px 0 20px 0;
+}
+
+.creating_NavEl-Text {
+  width: 100%;
+
+  transition: ease-in-out 0.5s;
+  clip-path: circle(5% at 50% 50%);
+
+  opacity: 0;
+
+  text-align: center;
+  font-size: 16px;
+
+  color: $gray_100;
+  cursor: pointer;
+
+  user-select: text;
+}
+
+.creating_NavEl-Text-Container:hover {
+  clip-path: circle(75%);
+  background: #19191ac4;
+
+  .creating_NavEl-Text {
+    clip-path: circle(100%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .creating_NavEl-Text-Container {
+    clip-path: circle(7% at 50% 50%);
+    width: 90%;
+  }
+
+  .creating_NavEl-Text {
+    font-size: 14px;
+  }
+}

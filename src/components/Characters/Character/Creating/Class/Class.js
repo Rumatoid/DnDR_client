@@ -5,7 +5,47 @@ import axios from 'axios';
 import './Class.scss';
 
 const Class = ({}) => {
-  return <div>Class</div>;
+  return (
+    <div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div> <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+      <div>Class</div>
+    </div>
+  );
 };
 
 export default Class;

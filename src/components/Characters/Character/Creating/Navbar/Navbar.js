@@ -1,65 +1,81 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
-import { useRouteMatch } from 'react-router-dom';
+import Slider from 'react-slick';
 
 import { ReactComponent as Back } from './Back.svg';
 
 import './Navbar.scss';
+import './media.scss';
 
-import Info from './info';
-
-import data from './data';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Navbar = ({ link, props }) => {
-  const checkActive = str => {
-    let res =
-      link === str
-        ? 'creating_NavEl-Container active'
-        : 'creating_NavEl-Container';
-    return res;
+  const [slideIndex, setsSlideIndex] = useState(0);
+
+  let slider2 = null;
+
+  useEffect(() => {
+    switch (props.match.params.type) {
+      case 'race':
+        setsSlideIndex(0);
+        break;
+      case 'class':
+        setsSlideIndex(1);
+        break;
+      case 'abilities':
+        setsSlideIndex(2);
+        break;
+      case 'description':
+        setsSlideIndex(3);
+        break;
+      case 'equipment':
+        setsSlideIndex(4);
+        break;
+    }
+  }, [slider2]);
+
+  useEffect(() => {
+    slider2.slickGoTo(slideIndex);
+    console.log(slideIndex);
+  }, [slideIndex, slider2]);
+
+  const settings = {
+    // className: 'sliderShadowBoxNavBar',
+    arrows: false,
+    infinite: false,
+    centerMode: true,
+    // centerPadding: '-20%',
+    slidesToShow: 3,
+
+    slidesToScroll: 1,
+    speed: 500,
+    focusOnSelect: true,
+    // variableWidth: true,
+    beforeChange: (current, next) => setsSlideIndex(next)
   };
 
   return (
-    <div className='creating_Nav'>
-      <Link to={'/' + props.match.params.Username}>
-        <Back className='crating_Nav-backImg' />
-      </Link>
-      <div>
-        <div className='creating_Nav-Container'>
-          <div className={checkActive('race')}>
-            <Link to={'race'} className='creating_NavEl'>
-              Раса
-            </Link>
-            <Info text={data.race} />
-          </div>
-          <div className={checkActive('class')}>
-            <Link to={'class'} className='creating_NavEl'>
-              Класс
-            </Link>
-            <Info text={data.class} />
-          </div>
-          <div className={checkActive('abilities')}>
-            <Link to={'abilities'} className='creating_NavEl'>
-              Характеристики
-            </Link>
-            <Info text={data.abilities} />
-          </div>
-          <div className={checkActive('description')}>
-            <Link to={'description'} className='creating_NavEl'>
-              Описание
-            </Link>
-            <Info text={data.description} />
-          </div>
-          <div className={checkActive('equipment')}>
-            <Link to={'equipment'} className='creating_NavEl'>
-              Снаряжение
-            </Link>
-            <Info text={data.equipment} />
-          </div>
-        </div>
-      </div>
+    <div className='creating_Nav-list'>
+      <Slider {...settings} ref={slider => (slider2 = slider)}>
+        <NavLink to='race' activeClassName='selected' className='active'>
+          Раса
+        </NavLink>
+        <NavLink to='class' activeClassName='selected' className='active'>
+          Класс
+        </NavLink>
+        <NavLink to='abilities' activeClassName='selected' className='active'>
+          Характеристики
+        </NavLink>
+        <NavLink to='description' activeClassName='selected' className='active'>
+          Описание
+        </NavLink>
+        <NavLink to='equipment' activeClassName='selected' className='active'>
+          Снаряжение
+        </NavLink>
+        <div />
+      </Slider>
     </div>
   );
 };
