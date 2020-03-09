@@ -18,6 +18,7 @@ const LogIn_SignUp = () => {
           process.env.REACT_APP_DB_URI + '/users/' + localStorage.getItem('jwt')
         )
         .then(res => {
+          console.log('1');
           if (res.data.username) {
             const history = createBrowserHistory({ forceRefresh: true });
 
