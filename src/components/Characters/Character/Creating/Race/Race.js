@@ -4,29 +4,12 @@ import axios from 'axios';
 
 import './Race.scss';
 
-const Race = ({}) => {
-  let races = [
-    'Гном',
-    'Дварф',
-    'Драконорожденный',
-    'Полуорк',
-    'Полурослик',
-    'Полуэльф',
-    'Тифлинг',
-    'Человек',
-    'Эльф'
-  ];
+import Races from './RacesList/Races';
 
+const Race = ({}) => {
   return (
     <div className='creating_Race-container'>
-      <div className='creating_Race-races-Container'>
-        {races.map((race, i) => (
-          <div className='creating_Race-RaceEl-Container' key={i}>
-            <div className='creating_Race-RaceEl2'>{race}</div>
-            <div className='creating_Race-RaceEl'>{race}</div>
-          </div>
-        ))}
-      </div>
+      <Races />
     </div>
   );
 };

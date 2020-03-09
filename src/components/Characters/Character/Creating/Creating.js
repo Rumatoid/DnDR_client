@@ -20,11 +20,9 @@ const Creating = props => {
 
   const [style, setStyle] = useState({
     backgroundImage:
-      'url(/img/backgrounds/background_smoke' +
-      getRandomInt(1, 6) +
-      '.png), url(/img/backgrounds/background' +
+      'url(/img/backgrounds/background_overlay.png), url(/img/backgrounds/background_color.png),url(/img/backgrounds/background' +
       getRandomInt(1, 8) +
-      '.jpg)'
+      '.jpg),url(/img/backgrounds/background.png)'
   });
 
   useEffect(() => {

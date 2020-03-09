@@ -1,6 +1,7 @@
 @import 'public/utilities/variables';
 
 .creating_Nav {
+  user-select: none;
   position: relative;
   width: 100%;
   height: 18vh;
@@ -94,6 +95,8 @@
     color: $gray_100;
     cursor: pointer;
     width: 100%;
+
+    user-select: text;
   }
 
   .creating_NavEl-Text-Container:hover {
