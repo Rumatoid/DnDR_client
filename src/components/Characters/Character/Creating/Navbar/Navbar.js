@@ -65,7 +65,3 @@ const Navbar = ({ link, props }) => {
 };
 
 export default Navbar;
-//! Проверка при изменение размера окна
-// window.addEventListener('resize', () => {
-//   setSize(window.innerWidth);
-// });

@@ -15,6 +15,7 @@ const getRandomInt = (min, max) => {
 
 const Creating = props => {
   const [link, setLink] = useState(props.match.params.type);
+  const [size, setSize] = useState(window.innerWidth);
 
   const history = props.history;
 
@@ -25,6 +26,10 @@ const Creating = props => {
       '.jpg),url(/img/backgrounds/background.png)'
   });
 
+  window.addEventListener('resize', () => {
+    setSize(window.innerWidth);
+  });
+
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
       checkAuth.checkAuth(props);
@@ -33,6 +38,13 @@ const Creating = props => {
       history.push('/');
     }
   }, [props.match.params.Username]);
+
+  useEffect(() => {
+    if (size < 768)
+      setStyle({
+        backgroundImage: 'none'
+      });
+  }, [size]);
 
   useEffect(() => {
     setLink(props.match.params.type);
