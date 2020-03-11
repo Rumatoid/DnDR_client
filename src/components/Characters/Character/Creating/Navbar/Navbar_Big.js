@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Navbar_Big = () => {
+import { ReactComponent as Back } from './Back.svg';
+
+const Navbar_Big = ({ props }) => {
+  const handleBack = () => {
+    props.history.push('/' + props.match.params.Username);
+  };
+
   return (
     <div className='creating_Nav-list'>
       <div className='creating_Nav-view'>
@@ -29,6 +35,7 @@ const Navbar_Big = () => {
           Снаряжение
         </NavLink>
       </div>
+      <Back className='crating_Nav-backImg_big' onClick={handleBack} />
     </div>
   );
 };

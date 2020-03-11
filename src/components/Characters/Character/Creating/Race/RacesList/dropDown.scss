@@ -17,7 +17,7 @@
 }
 
 .creating_Race-RaceEl_Dropdown {
-  transition: 0.8s ease-in-out;
+  transition: 0.6s ease-in-out;
   transition-delay: 0s;
 
   width: 100%;
@@ -62,29 +62,8 @@
   color: $gray_100;
 }
 
-.creating_Race-RaceEl_Dropdown::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  margin-top: -2px;
-  left: 100%;
-  width: 100%;
-  opacity: 1;
-  height: 4px;
-  background-color: $gray_600;
-  transition: none;
-}
-
 .creating_Race-RaceEl_DropdownEl-Container:hover {
-  .creating_Race-RaceEl_Dropdown::after {
-    opacity: 0;
-    left: 0%;
-    transition: left 0.3s, opacity 0.9s cubic-bezier(1, 0, 1, 1);
-  }
   .creating_Race-RaceEl_Dropdown {
-    transition-delay: 0.1s;
-
     clip-path: polygon(
       0% 0%,
       100% 0%,

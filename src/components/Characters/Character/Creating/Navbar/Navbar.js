@@ -13,7 +13,7 @@ import Navbar_Big from './Navbar_Big';
 
 const Navbar = ({ props, size }) => {
   if (size < 768) return <Navbar_Small props={props} />;
-  else return <Navbar_Big />;
+  else return <Navbar_Big props={props} />;
 };
 
 export default Navbar;

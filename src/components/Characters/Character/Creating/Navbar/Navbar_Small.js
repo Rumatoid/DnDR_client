@@ -3,8 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 import SwipeableViews from 'react-swipeable-views';
 
+import { ReactComponent as Back } from './Back.svg';
+
 const Navbar_Small = ({ props }) => {
   const [slideIndex, setsSlideIndex] = useState(0);
+
+  const handleBack = () => {
+    props.history.push('/' + props.match.params.Username);
+  };
+
   useEffect(() => {
     switch (props.match.params.type) {
       case 'race':
@@ -58,6 +65,7 @@ const Navbar_Small = ({ props }) => {
           </NavLink>
         </div>
       </SwipeableViews>
+      <Back className='crating_Nav-backImg' onClick={handleBack} />
     </div>
   );
 };

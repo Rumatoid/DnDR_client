@@ -41,7 +41,7 @@
 }
 
 .Character {
-  transition: 0.8s ease-in-out;
+  transition: 0.6s ease-in-out;
   transition-delay: 0s;
 
   position: relative;
@@ -97,28 +97,8 @@
   color: $gray_100;
 }
 
-.Character::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  margin-top: -2px;
-  left: 100%;
-  width: 100%;
-  opacity: 1;
-  height: 4px;
-  background-color: $gray_600;
-  transition: none;
-}
-
 .Character_li-Container:hover {
-  .Character::after {
-    opacity: 0;
-    left: 0%;
-    transition: left 0.3s, opacity 0.9s cubic-bezier(1, 0, 1, 1);
-  }
   .Character {
-    transition-delay: 0.1s;
     clip-path: polygon(
       0% 0%,
       100% 0%,
@@ -132,8 +112,6 @@
   }
 
   .Character2 {
-    transition-delay: 0.5s;
-
     transform: translateX(5px);
   }
 }
