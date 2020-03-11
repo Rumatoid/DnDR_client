@@ -29,6 +29,9 @@ const Races = () => {
     { info: 'Эльф', subraces: ['Высший', 'Лесной', 'Тёмный'] }
   ];
 
+  //TODO Быстрее анимация
+  //TODO Сортировка по книге
+
   return (
     <React.Fragment>
       <div className='creating_Race-races-Container'>

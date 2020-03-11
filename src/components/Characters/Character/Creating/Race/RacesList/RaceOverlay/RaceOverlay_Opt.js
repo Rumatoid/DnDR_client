@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const RaceOverlay_Opt = ({ option, i }) => {
+  //TODO Сделать по умолчанию true
   const [active, setActive] = useState(false);
 
   const toggleActive = () => {

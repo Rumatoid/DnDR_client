@@ -8,6 +8,8 @@ import './LogIn_SignUp__Nav.scss';
 import LogIn from './LogIn/LogIn';
 import SignUp from './LogIn/SignUp';
 
+//TODO На телефонах не прокручивается вверх
+
 const LogIn_SignUp = () => {
   const [flag, setFlag] = useState(true);
 
