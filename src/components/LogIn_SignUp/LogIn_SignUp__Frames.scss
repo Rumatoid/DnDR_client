@@ -21,33 +21,38 @@ body {
 .joinOuterContainer {
   display: flex;
   justify-content: center;
-  height: 100vh;
-  overflow-y: auto;
-  align-items: center;
+  overflow: hidden;
+
+  overflow-y: visible;
+  height: 110vh;
   overflow-x: hidden;
 }
 
 .joinInnerContainer {
-  padding: 10% 5% 0 5%;
-  height: 100%;
+  margin: auto;
+  padding: 5% 5% 0% 5%;
   align-items: center;
 }
 
 .LogIn {
-  height: 375px;
+  display: block;
+  height: 380px;
+
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
 }
 
 .LogIn-left {
   transform: translateX(-400px);
+
   opacity: 0;
 }
 
 .SignUp {
-  height: 375px;
   position: relative;
-  top: -375px;
+  top: -380px;
+  height: 380px;
+
   left: 450px;
   opacity: 0;
   -webkit-transition: all 0.5s ease;
