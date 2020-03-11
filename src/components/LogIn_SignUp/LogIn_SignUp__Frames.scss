@@ -7,7 +7,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: $gray_900;
-  overflow: visible;
+  overflow: auto;
 }
 
 #root {
@@ -20,15 +20,18 @@ body {
 
 .joinOuterContainer {
   display: flex;
-  justify-content: center;
-  height: 100vh;
+  // justify-content: center;
+  // height: 50vh;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .joinInnerContainer {
+  position: relative;
   padding: 10% 5% 0 5%;
-  // height: 100vh;
-  overflow-x: hidden;
+  // height: 100%;
+  margin: auto;
+  // overflow-x: hidden;
   align-items: center;
 }
 
