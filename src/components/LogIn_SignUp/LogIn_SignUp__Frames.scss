@@ -20,18 +20,16 @@ body {
 
 .joinOuterContainer {
   display: flex;
-  // justify-content: center;
-  // height: 50vh;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: auto;
   align-items: center;
   overflow-x: hidden;
 }
 
 .joinInnerContainer {
-  position: relative;
   padding: 10% 5% 0 5%;
-  // height: 100%;
-  margin: auto;
-  // overflow-x: hidden;
+  height: 100%;
   align-items: center;
 }
 
